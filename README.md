@@ -1,2 +1,19 @@
-# data-for-the-future
-We are going to create a phone and web application that will meet the requirements of the challenge proposed by the Hawaiian Electric Company
+# Data For The Future
+
+## Requirements
+
+1. [Node.js LTS](https://nodejs.org/en/)
+
+Optional: [yarn](https://yarnpkg.com/lang/en/)
+
+## Installing
+
+```bash
+yarn install # or npm install
+```
+
+## Running
+
+```bash
+yarn start # or npm start
+```
