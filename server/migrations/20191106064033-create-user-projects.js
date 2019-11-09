@@ -1,21 +1,18 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('indicator_mas', {
+    return queryInterface.createTable('user-projects', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      IndicatorID: {
+      userID: {
         type: Sequelize.INTEGER
       },
-      IndicatorName: {
-        type: Sequelize.STRING
-      },
-      UnitOfMeasurement: {
-        type: Sequelize.STRING
+      projectID: {
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,
@@ -28,6 +25,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('indicator_mas');
+    return queryInterface.dropTable('user-projects');
   }
 };

@@ -1,26 +1,26 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('RunningTotals', {
+    return queryInterface.createTable('running-totals', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      RunningTotalID: {
+      runningTotalID: {
         type: Sequelize.INTEGER
       },
-      IndicatorID: {
+      indicatorID: {
         type: Sequelize.INTEGER
       },
-      IndicatorName: {
+      indicatorName: {
         type: Sequelize.STRING
       },
-      UnitOfMeasurement: {
+      unitOfMeasurement: {
         type: Sequelize.STRING
       },
-      RunningTotal: {
+      runningTotal: {
         type: Sequelize.FLOAT
       },
       createdAt: {
@@ -34,6 +34,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('RunningTotals');
+    return queryInterface.dropTable('running-totals');
   }
 };

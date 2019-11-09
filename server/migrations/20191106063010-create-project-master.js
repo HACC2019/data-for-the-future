@@ -1,32 +1,32 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('projectMasters', {
+    return queryInterface.createTable('project-masters', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      ProjectID: {
+      projectID: {
         type: Sequelize.INTEGER
       },
-      ProjectName: {
+      projectName: {
         type: Sequelize.STRING
       },
-      ContactUserID: {
+      contactUserID: {
         type: Sequelize.INTEGER
       },
-      Longitude: {
+      longitude: {
         type: Sequelize.FLOAT
       },
-      Latitude: {
+      latitude: {
         type: Sequelize.FLOAT
       },
-      StartDate: {
+      startDate: {
         type: Sequelize.INTEGER
       },
-      EndDate: {
+      endDate: {
         type: Sequelize.INTEGER
       },
       createdAt: {
@@ -40,6 +40,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('projectMasters');
+    return queryInterface.dropTable('project-masters');
   }
 };

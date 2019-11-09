@@ -1,23 +1,23 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('indicator_relations', {
+    return queryInterface.createTable('project-indicator-relations', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      ProjectIndicatorID: {
+      projectIndicatorID: {
         type: Sequelize.INTEGER
       },
-      ProjectID: {
+      projectID: {
         type: Sequelize.INTEGER
       },
-      IndicatorID: {
+      indicatorID: {
         type: Sequelize.INTEGER
       },
-      MetricMeasurement: {
+      metricMeasurement: {
         type: Sequelize.FLOAT
       },
       createdAt: {
@@ -31,6 +31,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('indicator_relations');
+    return queryInterface.dropTable('project-indicator_relations');
   }
 };

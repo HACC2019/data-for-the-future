@@ -1,26 +1,26 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('project_relations', {
+    return queryInterface.createTable('project-relations', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      ProjectRelationID: {
+      projectRelationID: {
         type: Sequelize.INTEGER
       },
-      ProjectID: {
+      projectID: {
         type: Sequelize.INTEGER
       },
-      ProjectName: {
+      projectName: {
         type: Sequelize.STRING
       },
-      CategoryID: {
+      categoryID: {
         type: Sequelize.INTEGER
       },
-      ActivityID: {
+      activityID: {
         type: Sequelize.INTEGER
       },
       createdAt: {
@@ -34,6 +34,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('project_relations');
+    return queryInterface.dropTable('project-relations');
   }
 };
