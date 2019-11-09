@@ -1,6 +1,6 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const project-master = sequelize.define('project-master', {
+  const projectMaster = sequelize.define('projectMaster', {
     projectID: DataTypes.INTEGER,
     projectName: DataTypes.STRING,
     contactUserID: DataTypes.INTEGER,
@@ -9,8 +9,8 @@ module.exports = (sequelize, DataTypes) => {
     startDate: DataTypes.INTEGER,
     endDate: DataTypes.INTEGER
   }, {});
-  project-master.associate = function(models) {
+  projectMaster.associate = function(models) {
     // associations can be defined here
   };
-  return project-master;
+  return projectMaster;
 };

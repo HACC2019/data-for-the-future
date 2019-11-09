@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('project-indicator-relations', {
+    return queryInterface.createTable('projectIndicatorRelations', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -31,6 +31,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('project-indicator_relations');
+    return queryInterface.dropTable('projectIndicatorRelations');
   }
 };

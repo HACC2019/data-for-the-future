@@ -1,12 +1,12 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const indicator-master = sequelize.define('indicator-master', {
+  const indicatorMaster = sequelize.define('indicatorMaster', {
     indicatorID: DataTypes.INTEGER,
     indicatorName: DataTypes.STRING,
     unitOfMeasurement: DataTypes.STRING
   }, {});
-  indicator_master.associate = function(models) {
+  indicatorMaster.associate = function(models) {
     // associations can be defined here
   };
-  return indicator-master;
+  return indicatorMaster;
 };

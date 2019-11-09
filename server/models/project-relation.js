@@ -1,14 +1,14 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const project-relation = sequelize.define('project-relation', {
+  const projectRelation = sequelize.define('projectRelation', {
     projectRelationID: DataTypes.INTEGER,
     projectID: DataTypes.INTEGER,
     projectName: DataTypes.STRING,
     categoryID: DataTypes.INTEGER,
     activityID: DataTypes.INTEGER
   }, {});
-  project-relation.associate = function(models) {
+  projectRelation.associate = function(models) {
     // associations can be defined here
   };
-  return project-relation;
+  return projectRelation;
 };

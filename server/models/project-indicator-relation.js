@@ -1,13 +1,13 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const project-indicator-relation = sequelize.define('project-indicator-relation', {
+  const projectIndicatorRelation = sequelize.define('projectIndicatorRelation', {
     projectIndicatorID: DataTypes.INTEGER,
     projectID: DataTypes.INTEGER,
     indicatorID: DataTypes.INTEGER,
     metricMeasurement: DataTypes.FLOAT
   }, {});
-  project-indicator-relation.associate = function(models) {
+  projectIndicatorRelation.associate = function(models) {
     // associations can be defined here
   };
-  return project-indicator-relation;
+  return projectIndicatorRelation;
 };
