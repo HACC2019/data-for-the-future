@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { Button, Layout, Text } from 'react-native-ui-kitten';
 import { Actions } from 'react-native-router-flux';
 
@@ -39,9 +39,9 @@ export const HomeScreen = () => (
     </Button>
     <Button
       style={styles.navigation}
-      onPress={Actions.ExploreProjects}
+      onPress={Actions.ExploreCategories}
     >
-     See Projects 
+     See Categories 
     </Button>
   </Layout>
 );

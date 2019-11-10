@@ -6,7 +6,7 @@ import { Router, Stack, Scene } from 'react-native-router-flux';
 
 import { HomeScreen } from './pages/HomeScreen';
 import { Project } from './pages/Project';
-import { ExploreCategory } from './pages/ExploreCategory';
+import { ExploreCategories } from './pages/ExploreCategories';
 import { ExploreProjects } from './pages/ExploreProjects';
 
 const App = () => (
@@ -17,7 +17,7 @@ const App = () => (
         <Stack key="root">
           <Scene key="HomeScreen" component={HomeScreen} initial />
           <Scene key="Project" component={Project} />
-          <Scene key="ExploreCategory" component={ExploreCategory} />
+          <Scene key="ExploreCategories" component={ExploreCategories} />
           <Scene key="ExploreProjects" component={ExploreProjects} />
         </Stack>
       </Router>
