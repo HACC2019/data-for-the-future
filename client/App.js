@@ -15,7 +15,7 @@ const App = () => (
     <ApplicationProvider mapping={mapping} theme={lightTheme}>
       <Router>
         <Stack key="root">
-          <Scene key="HomeScreen" component={HomeScreen} />
+          <Scene key="HomeScreen" component={HomeScreen} initial />
           <Scene key="Project" component={Project} />
           <Scene key="ExploreCategory" component={ExploreCategory} />
           <Scene key="ExploreProjects" component={ExploreProjects} />
