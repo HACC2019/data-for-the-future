@@ -82,26 +82,22 @@ export const Project = ({
               <Icon name='bulb-outline' width={26} height={26} fill='#ccc' />
               <Icon name='people-outline' width={26} height={26} fill='#ccc' />
             </Layout>
-            <Layout style={styles.padding}>
+            <Layout style={{ paddingBottom: 10 }}>
               <Layout style={styles.flexRow}>
-                <Layout style={{ padding: 3 }}>
-                  <Icon name='clock-outline' width={26} height={26} fill='#3366FF' />
+                <Layout>
+                  <Icon name='clock-outline' width={20} height={20} fill='#3366FF' />
                 </Layout>
-                <Layout style={{ paddingTop: 8, paddingLeft: 2 }}>
+                <Layout style={{ paddingTop: 4, paddingLeft: 2 }}>
                   <Text appearance="hint" category="c1">
                     {date}
                   </Text>
                 </Layout>
               </Layout>
               <Layout style={styles.flexRow}>
-                <Layout style={{ padding: 3 }}>
-                  <Avatar
-                    style={styles.item}
-                    size='tiny'
-                    source={{ uri: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330' }}
-                  />
+                <Layout>
+                  <Icon name='person-outline' width={20} height={20} fill='#3366FF' />
                 </Layout>
-                <Layout style={{ paddingTop: 7, paddingLeft: 2 }}>
+                <Layout style={{ paddingTop: 5, paddingLeft: 2 }}>
                   <Text appearance="hint" category="c1">
                     {participants} participants
                   </Text>
@@ -181,9 +177,6 @@ const styles = StyleSheet.create({
     marginTop: -40,
   },
   text: { marginVertical: 16 },
-  padding: {
-    padding: 3
-  },
   flexRow: {
     display: 'flex',
     flexDirection: 'row'
