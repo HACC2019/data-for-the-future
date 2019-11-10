@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   project.associate = function(models) {
     project.belongsToMany(models.User, {through: 'UserProjects', foreignKey: 'projectID', as: 'contributor'})
-    project.belongsToMany(models.Category, {through: 'ProjectRelations', foreignKey: 'categoryID', as: 'listing'})
+    project.belongsToMany(models.Category, {through: 'ProjectCategories', foreignKey: 'categoryID', as: 'listing'})
     project.belongsToMany(models.Indicator, {through: 'ProjectIndicators', foreignKey: 'indicatorID', as: 'measurement'})
   };
   return project;
