@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('ProjectIndicators', {
+    return queryInterface.createTable('IndicatorProjects', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -25,6 +25,9 @@ module.exports = {
       metric: {
         type: Sequelize.FLOAT
       },
+      description: {
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
@@ -36,6 +39,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('ProjectIndicators');
+    return queryInterface.dropTable('IndicatorProjects');
   }
 };

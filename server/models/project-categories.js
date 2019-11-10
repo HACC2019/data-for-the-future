@@ -5,8 +5,8 @@ module.exports = (sequelize, DataTypes) => {
     categoryID: DataTypes.INTEGER,
   }, {});
   ProjectRelation.associate = function(models) {
-    ProjectRelation.belongsTo(models.Project, {foreignKey: 'projectID'})
-    ProjectRelation.belongsTo(models.Category, {foreignKey: 'categoryID'})
+    ProjectRelation.belongsTo(models.Project, {foreignKey: 'id'})
+    ProjectRelation.belongsTo(models.Category, {foreignKey: 'id'})
   };
   return ProjectRelation;
 };

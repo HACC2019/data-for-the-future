@@ -1,10 +1,10 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const Category = sequelize.define('Category', {
-    categoryName: DataTypes.STRING
+  const category = sequelize.define('Category', {
+    name: DataTypes.STRING
   }, {});
-  Category.associate = function(models) {
-    Category.belongsToMany(models.Project, {through: 'ProjectRelations', foreignKey: 'projectID', as: 'origin'})
+  category.associate = function(models) {
+    category.belongsToMany(models.Project, {through: 'ProjectRelations', foreignKey: 'projectID', as: 'origin'})
   };
-  return Category;
+  return category;
 };

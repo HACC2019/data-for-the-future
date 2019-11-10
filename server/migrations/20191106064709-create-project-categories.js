@@ -1,27 +1,28 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('RunningTotals', {
+    return queryInterface.createTable('ProjectCategories', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      runningTotalID: {
-        type: Sequelize.INTEGER
+      projectID: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'Projects',
+          key: 'id'
+        }
       },
-      indicatorID: {
-        type: Sequelize.INTEGER
-      },
-      indicatorName: {
-        type: Sequelize.STRING
-      },
-      unitOfMeasurement: {
-        type: Sequelize.STRING
-      },
-      runningTotal: {
-        type: Sequelize.FLOAT
+      categoryID: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'Categories',
+          key: 'id'
+        }
       },
       createdAt: {
         allowNull: false,
@@ -34,6 +35,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('RunningTotals');
+    return queryInterface.dropTable('ProjectCategories');
   }
 };
