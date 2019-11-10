@@ -1,13 +1,13 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const projectIndicatorRelation = sequelize.define('projectIndicatorRelation', {
-    projectIndicatorID: DataTypes.INTEGER,
+  const ProjectIndicatorRelation = sequelize.define('ProjectIndicatorRelation', {
     projectID: DataTypes.INTEGER,
     indicatorID: DataTypes.INTEGER,
     metricMeasurement: DataTypes.FLOAT
   }, {});
-  projectIndicatorRelation.associate = function(models) {
-    // associations can be defined here
+  ProjectIndicatorRelation.associate = function(models) {
+    ProjectIndicatorRelation.belongsTo(models.Project, {foreignKey: 'projectID'})
+    ProjectIndicatorRelation.belongsTo(models.Indicator, {foreignKey: 'indicatorID'})
   };
-  return projectIndicatorRelation;
+  return ProjectIndicatorRelation;
 };

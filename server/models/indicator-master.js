@@ -1,12 +1,13 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const indicatorMaster = sequelize.define('indicatorMaster', {
+  const Indicator = sequelize.define('Indicator', {
     indicatorID: DataTypes.INTEGER,
     indicatorName: DataTypes.STRING,
     unitOfMeasurement: DataTypes.STRING
   }, {});
-  indicatorMaster.associate = function(models) {
-    // associations can be defined here
+  Indicator.associate = function(models) {
+    Indicator.belongsToMany(models.Project, {through: 'ProjectIndicators', foreignKey: 'projectID', as: 'taken'})
+    Indicator.belongsTo(models.RunningTotal, {as: 'part'})
   };
-  return indicatorMaster;
+  return Indicator;
 };

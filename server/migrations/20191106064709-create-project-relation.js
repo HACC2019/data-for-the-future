@@ -8,20 +8,21 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      projectRelationID: {
-        type: Sequelize.INTEGER
-      },
       projectID: {
-        type: Sequelize.INTEGER
-      },
-      projectName: {
-        type: Sequelize.STRING
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'Projects',
+          key: 'id'
+        }
       },
       categoryID: {
-        type: Sequelize.INTEGER
-      },
-      activityID: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'Categories',
+          key: 'id'
+        }
       },
       createdAt: {
         allowNull: false,

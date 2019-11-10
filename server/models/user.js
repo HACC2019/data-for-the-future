@@ -1,7 +1,6 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const user = sequelize.define('user', {
-    userID: DataTypes.INTEGER,
+  const User = sequelize.define('User', {
     username: DataTypes.STRING,
     email: DataTypes.STRING,
     first: DataTypes.STRING,
@@ -9,8 +8,8 @@ module.exports = (sequelize, DataTypes) => {
     profilePic: DataTypes.INTEGER,
     phoneNumber: DataTypes.INTEGER
   }, {});
-  user.associate = function(models) {
-    // associations can be defined here
+  User.associate = function(models) {
+    User.belongsToMany(models.Project, {through: 'UserProjects', foreignKey: 'userID', as: 'projects'})
   };
-  return user;
+  return User;
 };
