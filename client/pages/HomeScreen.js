@@ -37,6 +37,12 @@ export const HomeScreen = () => (
     >
       Get Involved
     </Button>
+    <Button
+      style={styles.navigation}
+      onPress={Actions.ExploreProjects}
+    >
+     See Projects 
+    </Button>
   </Layout>
 );
 
