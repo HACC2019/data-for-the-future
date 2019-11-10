@@ -73,7 +73,7 @@ export const Project = ({
           style={styles.body}
         >
           <ScrollView>
-            <Text category="h2">Waikiki Biking</Text>
+            <Text category="h2">{project}</Text>
             <Layout style={[styles.flexRow, styles.padding]}>
               <Icon name='charging-outline' width={26} height={26} fill='#FF6961' />
               <Icon name='car-outline' width={26} height={26} fill='#FF6961' />
