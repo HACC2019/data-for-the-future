@@ -1,6 +1,6 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const ProjectRelation = sequelize.define('ProjectRelation', {
+  const ProjectRelation = sequelize.define('ProjectCategory', {
     projectID: DataTypes.INTEGER,
     categoryID: DataTypes.INTEGER,
   }, {});

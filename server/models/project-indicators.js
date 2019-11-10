@@ -1,6 +1,6 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const indicatorProjects = sequelize.define('IndicatorProjects', {
+  const indicatorProjects = sequelize.define('IndicatorProject', {
     projectID: DataTypes.INTEGER,
     indicatorID: DataTypes.INTEGER,
     metricMeasurement: DataTypes.FLOAT

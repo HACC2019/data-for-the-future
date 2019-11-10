@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING
   }, {});
   category.associate = function(models) {
-    category.belongsToMany(models.Project, {through: 'ProjectRelations', foreignKey: 'projectID', as: 'origin'})
+    category.belongsToMany(models.Project, {through: 'ProjectCategories', foreignKey: 'projectID', as: 'origin'})
   };
   return category;
 };
