@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('projectMasters', {
+    return queryInterface.createTable('ProjectIndicators', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -9,25 +9,21 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       projectID: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Projects',
+          key: 'id'
+        }
       },
-      projectName: {
-        type: Sequelize.STRING
+      indicatorID: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Indicators',
+          key: 'id'
+        }
       },
-      contactUserID: {
-        type: Sequelize.INTEGER
-      },
-      longitude: {
+      metric: {
         type: Sequelize.FLOAT
-      },
-      latitude: {
-        type: Sequelize.FLOAT
-      },
-      startDate: {
-        type: Sequelize.INTEGER
-      },
-      endDate: {
-        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,
@@ -40,6 +36,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('projectMasters');
+    return queryInterface.dropTable('ProjectIndicators');
   }
 };

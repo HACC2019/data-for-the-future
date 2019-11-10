@@ -1,24 +1,33 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('indicatorMaster', {
+    return queryInterface.createTable('Project', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      indicatorID: {
+      userId: {
+
+      },
+      name: {
+        type: Sequelize.STRING
+      },
+      contactUserID: {
         type: Sequelize.INTEGER
       },
-      indicatorName: {
-        type: Sequelize.STRING
+      longitude: {
+        type: Sequelize.FLOAT
       },
-      unitOfMeasurement: {
-        type: Sequelize.STRING
+      latitude: {
+        type: Sequelize.FLOAT
       },
       createdAt: {
         allowNull: false,
+        type: Sequelize.DATE
+      },
+      endsAt: {
         type: Sequelize.DATE
       },
       updatedAt: {
@@ -28,6 +37,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('indicatorMaster');
+    return queryInterface.dropTable('Project');
   }
 };
