@@ -4,22 +4,34 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('Categories', [
       {
-        name: 'Energy',
+        name: 'Clean Energy',
+        icon: 'charging-outline',
+        description: 'Sustainability is the name of the game.'
       },
       {
-        name: 'Food',
+        name: 'Local Food',
+        icon: 'car-outline',
+        description: 'Sustainability is the name of the game.'
       },
       {
-        name: 'Natural Resource Management',
+        name: 'Resources',
+        icon: 'globe-2-outline',
+        description: 'Sustainability is the name of the game.'
       },
       {
         name: 'Waste',
+        icon: 'trash-outline',
+        description: 'Sustainability is the name of the game.'
       },
       {
         name: 'Communities',
+        icon: 'bulb-outline',
+        description: 'Sustainability is the name of the game.'
       },
       {
-        name: 'Education & Workforce',
+        name: 'Education',
+        icon: 'people-outline',
+        description: 'Sustainability is the name of the game.'
       }
     ], {});
   },
