@@ -1,16 +1,16 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const projectMaster = sequelize.define('projectMaster', {
-    projectID: DataTypes.INTEGER,
+  const Project = sequelize.define('Project', {
     projectName: DataTypes.STRING,
-    contactUserID: DataTypes.INTEGER,
     longitude: DataTypes.FLOAT,
     latitude: DataTypes.FLOAT,
     startDate: DataTypes.INTEGER,
     endDate: DataTypes.INTEGER
   }, {});
-  projectMaster.associate = function(models) {
-    // associations can be defined here
+  Project.associate = function(models) {
+    Project.belongsToMany(models.User, {through: 'UserProjects', foreignKey: 'projectID', as: 'contributer'})
+    Project.belongsToMany(models.Category, {through: 'ProjectRelations', foreignKey: 'categoryID', as: 'listing'})
+    Project.belongsToMany(models.Indicator, {through: 'ProjectIndicators', foreignKey: 'indicatorID', as: 'measurement'})
   };
-  return projectMaster;
+  return Project;
 };

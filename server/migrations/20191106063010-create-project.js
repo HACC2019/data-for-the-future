@@ -8,14 +8,8 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      userId: {
-
-      },
       name: {
         type: Sequelize.STRING
-      },
-      contactUserID: {
-        type: Sequelize.INTEGER
       },
       longitude: {
         type: Sequelize.FLOAT
