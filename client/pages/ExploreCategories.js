@@ -37,11 +37,15 @@ const categories = [
   }
 ]
 
+const goToCategory = ({ category }) => Actions.ExploreProjects({
+  category
+})
+
 export const ExploreCategories = () => {
   const retrieveCategories = () => {
 
   }
-  
+
   return (
     <Layout style={styles.container}>
       <Text style={{ paddingTop: 15 }} category='h4'>Categories</Text>
@@ -60,7 +64,7 @@ export const ExploreCategories = () => {
               name={name}
               description={description}
               icon={icon}
-              onPress={Actions.ExploreProjects({
+              onPress={goToCategory({
                 category: {
                   name, description, icon
                 }
