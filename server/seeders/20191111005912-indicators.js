@@ -30,8 +30,8 @@ module.exports = {
          {
            categoryId: 1,
            name: 'Total Energy Use',
-           unit: 'Barrels (thousands),
-           description: 'Total petroleum use by sector (Thousand barrels),
+           unit: 'Barrels (thousands)',
+           description: 'Total petroleum use by sector (Thousand barrels)',
            createdAt: new Date(),
            updatedAt: new Date()
          },
@@ -39,7 +39,7 @@ module.exports = {
            categoryId: 1,
            name: 'Transportation',
            unit: 'Gallons',
-           description: 'Fuel use for electricity, ground, and air transportation,
+           description: 'Fuel use for electricity, ground, and air transportation',
            createdAt: new Date(),
            updatedAt: new Date()
          },
@@ -79,7 +79,7 @@ module.exports = {
            categoryId: 2,
            name: 'Consumption',
            unit: 'Dollars of Agricultural Products Sold',
-           description: 'Value of crop/livestock/aquaculture sales in Hawai'i',
+           description: 'Value of crop/livestock/aquaculture sales in Hawai\'i',
            createdAt: new Date(),
            updatedAt: new Date()
          },
