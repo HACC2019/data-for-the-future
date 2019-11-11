@@ -220,16 +220,18 @@ module.exports = [
           .then((result) => request.json(result));
         case 'post':
           models.create({
-              indicatorID: request.body.indicatorID,
-              indicatorName: request.body.indicatorName,
-              unitOfMeasurement: request.body.unitOfMeasurement
+              categoryID: request.body.categoryID,
+              name: request.body.name,
+              description: request.body.description,
+              unit: request.body.unit
             })
             .then((result)=>request.json(result));
         case 'patch':
           models.update({
-            indicatorID: request.body.indicatorID,
-            indicatorName: request.body.indicatorName,
-            unitOfMeasurement: request.body.unitOfMeasurement            },
+            categoryID: request.body.categoryID,
+            name: request.body.name,
+            description: request.body.description,
+            unit: request.body.unit            },
             {
               where: {
                 id: request.params.id
