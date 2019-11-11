@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": null,
-    "database": "database",
+    "database": "db",
     "host": "167.172.207.155",
     "dialect": "mysql",
     "operatorsAliases": false
