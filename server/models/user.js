@@ -12,6 +12,5 @@ module.exports = (sequelize, DataTypes) => {
   user.associate = function(models) {
     user.belongsToMany(models.Project, {through: 'ProjectUsers', foreignKey: 'userID', as: 'projects'})
   };
-  user.sync();
   return user;
 };
