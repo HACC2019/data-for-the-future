@@ -19,9 +19,8 @@ module.exports = [
       try {
         const result = await models.User.findByPk(request.params.id)
           .catch((err) => {throw err});
-        if(result === null) return Boom.notFound();
         return result;
-      } catch (err) { console.log(err) }
+      } catch (err) {return Boom.notFound();}
     }
   },
   {
@@ -51,7 +50,7 @@ module.exports = [
           .catch((err) => {throw err});
         upDate.update(request.payload.username)
         return upDate.save();
-      } catch (err) { console.log(err) };
+      } catch (err) {return Boom.notFound();};
     }
   },
   {
@@ -62,7 +61,7 @@ module.exports = [
         const duser = await models.User.findByPk(request.params.id)
           .catch((err) => {throw err});
         return duser.destroy();
-      } catch (err) { console.log(err) };
+      } catch (err) {return Boom.notFound();};
     }
   }
 ];
