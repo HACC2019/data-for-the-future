@@ -1,4 +1,4 @@
-const models = require('./models');
+const models = require('../models');
 
 module.exports = [
   {
@@ -7,10 +7,10 @@ module.exports = [
     handler: (request, h) => {
       switch (request.method) {
         case 'get':
-          models.findByPk(request.params.id)
-          .then((result) => request.json(result));
+          models.User.findByPk(request.params.id)
+          .then((result) => h.response(result));
         case 'post':
-          models.create({
+          models.User.create({
               username: request.body.username,
               email: request.body.email,
               first: request.body.first,
@@ -18,9 +18,9 @@ module.exports = [
               profilePic: request.body.profilePic,
               phoneNumber: request.body.phoneNumber
             })
-            .then((result) => request.json(result));
+            .then((result) => h.response(result));
         case 'patch':
-          models.update({
+          models.User.update({
               username: request.body.username,
               email: request.body.email,
               first: request.body.first,
@@ -33,10 +33,10 @@ module.exports = [
                 id: request.params.id
               }
             })
-            .then((result)=>request.json(result));
+            .then((result)=>h.response(result));
         case 'delete':
-          models.destroy(request.params.id)
-          .then((result)=>request.json(result));
+          models.User.destroy(request.params.id)
+          .then((result)=>h.response(result));
       }
       return h.response('success');
     }
@@ -47,17 +47,17 @@ module.exports = [
     handler: (request, h) => {
       switch (request.method) {
         case 'get':
-          models.findByPk(request.params.id)
-          .then((result) => request.json(result));
+          models.Report.findByPk(request.params.id)
+          .then((result) => h.response(result));
         case 'post':
-          models.create({
+          models.Report.create({
               indicatorID: request.body.indicatorID,
               projectID: request.body.projectID,
               metric: request.body.metric
             })
-            .then((result) => request.json(result));
+            .then((result) => h.response(result));
         case 'patch':
-          models.update({
+          models.Report.update({
             indicatorID: request.body.indicatorID,
             projectID: request.body.projectID,
             metric: request.body.metric
@@ -67,10 +67,10 @@ module.exports = [
                 id: request.params.id
               }
             })
-            .then((result) => request.json(result));
+            .then((result) => h.response(result));
         case 'delete':
-          models.destroy(request.params.id)
-          .then((result) => request.json(result));
+          models.Report.destroy(request.params.id)
+          .then((result) => h.response(result));
       }
       return h.response('success');
     }
@@ -81,19 +81,19 @@ module.exports = [
     handler: (request, h) => {
       switch (request.method) {
         case 'get':
-          models.findByPk(request.params.id)
-          .then((result) => request.json(result));
+          models.Project.findByPk(request.params.id)
+          .then((result) => h.response(result));
         case 'post':
-          models.create({
+          models.Project.create({
               name: request.body.name,
               summary: request.body.summary,
               longitude: request.body.longitude,
               latitude: request.body.latitude,
               endsDate: request.body.endDate
             })
-            .then((result)=>request.json(result));
+            .then((result)=>h.response(result));
         case 'patch':
-          models.update({
+          models.Project.update({
               name: request.body.name,
               summary: request.body.summary,
               longitude: request.body.longitude,
@@ -104,10 +104,10 @@ module.exports = [
                 id: request.params.id
               }
             })
-            .then((result)=>request.json(result));
+            .then((result)=>h.response(result));
         case 'delete':
-          models.destroy(request.params.id)
-          .then((result)=>request.json(result));
+          models.Project.destroy(request.params.id)
+          .then((result)=>h.response(result));
       }
       return h.response('success');
     }
@@ -118,16 +118,16 @@ module.exports = [
     handler: (request, h) => {
       switch (request.method) {
         case 'get':
-          models.findByPk(request.params.id)
-          .then((result) => request.json(result));
+          models.ProjectUser.findByPk(request.params.id)
+          .then((result) => h.response(result));
         case 'post':
-          models.create({
+          models.ProjectUser.create({
               userID: request.body.userID,
               projectID: request.body.projectID
             })
-            .then((result)=>request.json(result));
+            .then((result)=>h.response(result));
         case 'patch':
-          models.update({
+          models.ProjectUser.update({
             userID: request.body.userID,
             projectID: request.body.projectID
             },
@@ -136,10 +136,10 @@ module.exports = [
                 id: request.params.id
               }
             })
-            .then((result)=>request.json(result));
+            .then((result)=>h.response(result));
         case 'delete':
-          models.destroy(request.params.id)
-          .then((result)=>request.json(result));
+          models.ProjectUser.destroy(request.params.id)
+          .then((result)=>h.response(result));
       }
       return h.response('success');
     }
@@ -150,17 +150,17 @@ module.exports = [
     handler: (request, h) => {
       switch (request.method) {
         case 'get':
-          models.findByPk(request.params.id)
-          .then((result) => request.json(result));
+          models.IndicatorProject.findByPk(request.params.id)
+          .then((result) => h.response(result));
         case 'post':
-          models.create({
+          models.IndicatorProject.create({
               projectID: request.body.projectID,
               email: request.body.indicatorID,
               metricMeasurement: request.body.metricMeasurement
             })
-            .then((result)=>request.json(result));
+            .then((result)=>h.response(result));
         case 'patch':
-          models.update({
+          models.IndicatorProject.update({
               projectID: request.body.projectID,
               email: request.body.indicatorID,
               metricMeasurement: request.body.metricMeasurement
@@ -170,10 +170,10 @@ module.exports = [
                 id: request.params.id
               }
             })
-            .then((result)=>request.json(result));
+            .then((result)=>h.response(result));
         case 'delete':
-          models.destroy(request.params.id)
-          .then((result)=>request.json(result));
+          models.IndicatorProject.destroy(request.params.id)
+          .then((result)=>h.response(result));
       }
       return h.response('success');
     }
@@ -184,16 +184,16 @@ module.exports = [
     handler: (request, h) => {
       switch (request.method) {
         case 'get':
-          models.findByPk(request.params.id)
-          .then((result) => request.json(result));
+          models.ProjectCategory.findByPk(request.params.id)
+          .then((result) => h.response(result));
         case 'post':
-          models.create({
+          models.ProjectCategory.create({
               projectID: request.body.projectID,
               categoryID: request.body.categoryID
             })
-            .then((result)=>request.json(result));
+            .then((result)=>h.response(result));
         case 'patch':
-          models.update({
+          models.ProjectCategory.update({
               projectID: request.body.projectID,
               categoryID: request.body.categoryID
             },
@@ -202,10 +202,10 @@ module.exports = [
                 id: request.params.id
               }
             })
-            .then((result)=>request.json(result));
+            .then((result)=>h.response(result));
         case 'delete':
-          models.destroy(request.params.id)
-          .then((result)=>request.json(result));
+          models.ProjectCategory.destroy(request.params.id)
+          .then((result)=>h.response(result));
       }
       return h.response('success');
     }
@@ -216,18 +216,18 @@ module.exports = [
     handler: (request, h) => {
       switch (request.method) {
         case 'get':
-          models.findByPk(request.params.id)
-          .then((result) => request.json(result));
+          models.Indicator.findByPk(request.params.id)
+          .then((result) => h.response(result));
         case 'post':
-          models.create({
+          models.Indicator.create({
               categoryID: request.body.categoryID,
               name: request.body.name,
               description: request.body.description,
               unit: request.body.unit
             })
-            .then((result)=>request.json(result));
+            .then((result)=>h.response(result));
         case 'patch':
-          models.update({
+          models.Indicator.update({
             categoryID: request.body.categoryID,
             name: request.body.name,
             description: request.body.description,
@@ -237,10 +237,10 @@ module.exports = [
                 id: request.params.id
               }
             })
-            .then((result)=>request.json(result));
+            .then((result)=>h.response(result));
         case 'delete':
-          models.destroy(request.params.id)
-          .then((result)=>request.json(result));
+          models.Indicator.destroy(request.params.id)
+          .then((result)=>h.response(result));
       }
       return h.response('success');
     }
@@ -251,17 +251,17 @@ module.exports = [
     handler: (request, h) => {
       switch (request.method) {
         case 'get':
-          models.findByPk(request.params.id)
-          .then((result) => request.json(result));
+          models.Category.findByPk(request.params.id)
+          .then((result) => h.response(result));
         case 'post':
-          models.create({
+          models.Category.create({
               name: request.body.name,
               icon: request.body.icon,
               description: request.body.description
             })
-            .then((result)=>request.json(result));
+            .then((result)=>h.response(result));
         case 'patch':
-          models.update({
+          models.Category.update({
             name: request.body.name,
             icon: request.body.icon,
             description: request.body.description
@@ -271,10 +271,10 @@ module.exports = [
                 id: request.params.id
               }
             })
-            .then((result)=>request.json(result));
+            .then((result)=>h.response(result));
         case 'delete':
-          models.destroy(request.params.id)
-          .then((result)=>request.json(result));
+          models.Category.destroy(request.params.id)
+          .then((result)=>h.response(result));
       }
       return h.response('success');
     }

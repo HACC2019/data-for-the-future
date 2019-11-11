@@ -9,7 +9,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       categoryId: {
-           allowNull: false
+           allowNull: false,
            type: Sequelize.INTEGER
       },
       name: {
