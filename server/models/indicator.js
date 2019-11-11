@@ -1,9 +1,13 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const indicator = sequelize.define('Indicator', {
-    indicatorID: DataTypes.INTEGER,
-    indicatorName: DataTypes.STRING,
-    unitOfMeasurement: DataTypes.STRING
+    id: DataTypes.INTEGER
+    categoryId: DataTypes.INTEGER
+    name: DataTypes.STRING
+    unit: DataTypes.STRING
+    description: DataTypes.STRING
+    createdAt: DataTypes.DATE
+    updatedAt: DataTypes.DATE
   }, {});
   indicator.associate = function(models) {
     indicator.belongsToMany(models.Project, {through: 'ProjectIndicators', foreignKey: 'projectId', as: 'taken'})

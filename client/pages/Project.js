@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { StyleSheet, View, Image, ScrollView } from 'react-native';
+import { StyleSheet, View, Image, ScrollView, Dimensions } from 'react-native';
 import {
   Layout,
   Icon,
@@ -70,9 +70,9 @@ export const Project = ({
       />
       <Layout style={styles.outer} level="3">
         <Layout
-          style={styles.body}
+          style={[styles.body, { height: 400 }]}
         >
-          <ScrollView>
+          <ScrollView style={{ flex: 1 }}>
             <Text category="h2">{project}</Text>
             <Layout style={[styles.flexRow, styles.padding]}>
               <Icon name='charging-outline' width={26} height={26} fill='#FF6961' />
@@ -168,7 +168,8 @@ Project.defaultProps = {
 const styles = StyleSheet.create({
   container: { flex: 1, paddingTop: 10, alignContent: 'center' },
   outer: {
-    padding: 15,
+    padding: 20,
+    height: '100%'
   },
   body: {
     borderRadius: 10,
