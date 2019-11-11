@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   indicator.associate = function(models) {
     indicator.belongsToMany(models.Project, {through: 'ProjectIndicators', foreignKey: 'projectId', as: 'taken'})
-    indicator.belongsTo(models.RunningTotal, {as: 'part'})
+    indicator.belongsTo(models.Report, {as: 'part'})
   };
   return indicator;
 };

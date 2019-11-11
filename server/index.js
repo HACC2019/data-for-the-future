@@ -2,7 +2,7 @@
 
 const Hapi = require('@hapi/hapi');
 const routes = require('./routes/routes');
-const models = require('./models')
+const models = require('./models');
 
 const init = async () => {
   const server = Hapi.server({
