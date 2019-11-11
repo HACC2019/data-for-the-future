@@ -11,17 +11,20 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
+      summary: {
+        type: Sequelize.STRING
+      },
       longitude: {
         type: Sequelize.FLOAT
       },
       latitude: {
         type: Sequelize.FLOAT
       },
-      createdAt: {
-        allowNull: false,
+      endsAt: {
         type: Sequelize.DATE
       },
-      endsAt: {
+      createdAt: {
+        allowNull: false,
         type: Sequelize.DATE
       },
       updatedAt: {
@@ -31,6 +34,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Project');
+    return queryInterface.dropTable('Projects');
   }
 };

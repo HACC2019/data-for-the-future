@@ -15,7 +15,7 @@ module.exports = {
           key: 'id'
         }
       },
-      projectId: {
+      projectID: {
         type: Sequelize.INTEGER,
         references: {
           model: 'Projects',
@@ -36,6 +36,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Report');
+    return queryInterface.dropTable('Reports');
   }
 };
