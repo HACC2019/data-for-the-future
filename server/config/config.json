@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "root",
-    "password": null,
+    "username": "remote",
+    "password": "TH@NKUN3xt",
     "database": "db",
-    "host": "167.172.207.155",
+    "host": "138.197.0.93",
     "dialect": "mysql",
     "operatorsAliases": false
   },
