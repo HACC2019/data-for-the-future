@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, TouchableWithoutFeedback } from 'react-native';
 import { Button, Layout, Text, Icon } from 'react-native-ui-kitten';
 import { Actions } from 'react-native-router-flux';
 import { Card } from '../components/Card';
@@ -54,21 +54,13 @@ export const ExploreCategories = () => {
       </Text>
       <Layout style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
         {
-          categories.map(({
-            name,
-            description,
-            icon
-          }) => (
+          categories.map(category => (
             <Card
-              key={name}
-              name={name}
-              description={description}
-              icon={icon}
-              onPress={goToCategory({
-                category: {
-                  name, description, icon
-                }
-              })}
+              key={category.name}
+              name={category.name}
+              description={category.description}
+              icon={category.icon}
+              category={category}
             />
           ))
         }
