@@ -8,6 +8,7 @@ import { HomeScreen } from './pages/HomeScreen';
 import { Project } from './pages/Project';
 import { ExploreCategories } from './pages/ExploreCategories';
 import { ExploreProjects } from './pages/ExploreProjects';
+import { AddProject } from './pages/AddProject';
 
 const App = () => (
   <React.Fragment>
@@ -19,6 +20,7 @@ const App = () => (
           <Scene key="Project" component={Project} />
           <Scene key="ExploreCategories" component={ExploreCategories} />
           <Scene key="ExploreProjects" component={ExploreProjects} />
+          <Scene key="AddProject" component={AddProject} />
         </Stack>
       </Router>
     </ApplicationProvider>

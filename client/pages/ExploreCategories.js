@@ -64,7 +64,7 @@ export const ExploreCategories = () => {
               name={name}
               description={description}
               icon={icon}
-              onPress={goToCategory({
+              onPress={() => goToCategory({
                 category: {
                   name, description, icon
                 }

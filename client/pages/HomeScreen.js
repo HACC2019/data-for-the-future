@@ -33,15 +33,19 @@ export const HomeScreen = () => (
 
     <Button
       style={styles.navigation}
-      onPress={projects}
-    >
+      onPress={projects}>
       Get Involved
     </Button>
     <Button
       style={styles.navigation}
-      onPress={Actions.ExploreCategories}
-    >
+      onPress={Actions.ExploreCategories}>
      See Categories 
+    </Button>
+
+    <Button
+      style={styles.navigation}
+      onPress={Actions.AddProject}>
+     Add Project
     </Button>
   </Layout>
 );
