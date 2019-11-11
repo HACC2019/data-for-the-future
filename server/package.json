@@ -5,6 +5,7 @@
   "license": "MIT",
   "dependencies": {
     "@hapi/hapi": "^18.4.0",
+    "boom": "^7.3.0",
     "dotenv": "^8.2.0",
     "mysql2": "^2.0.0",
     "sequelize": "^5.21.2"
