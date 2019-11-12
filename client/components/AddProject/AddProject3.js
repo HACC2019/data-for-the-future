@@ -8,7 +8,8 @@ export class AddProject3 extends React.Component {
     title: '',
     description: '',
     email: '',
-    phone: ''
+    phone: '',
+    location:''
   };
 
   onTitleChange = (title) => {
@@ -25,6 +26,9 @@ export class AddProject3 extends React.Component {
     this.setState({ phone });
   };
 
+  onLocationChange = (location) => {
+    this.setState({ location });
+  };
 
   render() {
     return (
@@ -52,6 +56,11 @@ export class AddProject3 extends React.Component {
           placeholder='Contact Phone'
           value={this.state.phone}
           onChangeText={this.onPhoneChange}
+        />
+        <Input
+          placeholder='Location'
+          value={this.state.location}
+          onChangeText={this.onLocationChange}
         />
 
       </Layout>

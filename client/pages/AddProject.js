@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Keyboard, TouchableWithoutFeedback } from 'react-native';
+import { ScrollView, StyleSheet, Keyboard, TouchableWithoutFeedback } from 'react-native';
 import { Button, Layout, Text } from 'react-native-ui-kitten';
 import { AddProject1 } from '../components/AddProject/AddProject1';
 import { AddProject2 } from '../components/AddProject/AddProject2';
@@ -28,35 +28,26 @@ export class AddProject extends React.Component {
     submit: false
   };
 
-  seeForm() {
-    return (
-    <Layout>
-      <Text>{this.state.range.categories}</Text>
-      <Text>{this.state.title}</Text>
-      <Text>{this.state.desciption}</Text>
-      <Text>{this.state.range.startDate}</Text>
-    </Layout>
-    )
-  }
-
   render() {
     return (
+      <ScrollView bounces={false} bouncesZoom={false} 
+        alwaysBounceVertical={false} alwaysBounceHorizontal={false} {...this.props}>
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <Layout style={styles.container}>
-      <AddProject1/>
-      <AddProject2/>
-      <AddProject3/>
-      <AddProject4/>
+      <AddProject1 style={styles.form}/>
+      <AddProject2 style={styles.form}/>
+      <AddProject3 style={styles.form}/>
+      <AddProject4 style={styles.form}/>
       
-      <Button status='basic'>Save Draft</Button>
-      <Button status='success' onPress={() => {console.log(this.state.title)}}>Submit</Button>
-      {this.state.submit && this.seeForm()}
+      <Button style={styles.form} status='success'>Submit</Button>
     </Layout>
     </TouchableWithoutFeedback>
+    </ScrollView>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1 },
+  container: { flex: 1, paddingHorizontal: 16, paddingVertical: 8},
+  form: { padding: 20, marginVertical: 20},
 });

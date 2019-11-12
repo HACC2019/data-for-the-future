@@ -3,31 +3,30 @@ import PropTypes from 'prop-types';
 import { StyleSheet, TouchableOpacity,
     ImageBackground, View } from 'react-native';
 import { Text, Icon } from 'react-native-ui-kitten';
+import { Actions } from 'react-native-router-flux';
 
 
 export class ProjectCard extends React.Component {
   
-  gotoProjectPage = () => {console.log(this.props.projectTitle)};
-
 
   render() {
     return (
-    <TouchableOpacity activeOpacity={0.95} onPress={this.gotoProjectPage}>
+    <TouchableOpacity activeOpacity={0.95} onPress={Actions.ProjectPage}>
         <ImageBackground style={styles.container} source={{uri: `${this.props.projectImage}`}}>
         <View style={styles.overlay}>
             <View>
-                <Text style={styles.levelLabel} appearance='h5'> 
+                <Text style={styles.levelLabel} category='h5'> 
                     {this.props.projectTitle}
                 </Text>
             </View>
 
-            <View style={[styles.chipContainer, style]}>
-                <Icon name='clock-outline' style={styles.chipIcon}/>
-                <Text style={styles.chipsText} category='c2'>
+            <View style={styles.chipContainer}>
+                <Icon name='clock-outline' width={20} height={20} fill='#FFFFFF'/>
+                <Text style={styles.chipsText} category='label'>
                 {this.props.projectDate}  
                 </Text>
-                <Icon name='people-outline' style={styles.chipIcon}/>
-                <Text style={styles.chipsText} category='c2'>
+                <Icon name='people-outline'width={20} height={20} fill='#FFFFFF'/>
+                <Text style={styles.chipsText} category='label'>
                 {this.props.projectParticipants}
                 </Text>
             </View>
@@ -93,14 +92,8 @@ chipContainer: {
     justifyContent: 'space-between',
     paddingHorizontal: 10,
     paddingVertical: 4,
-    backgroundColor: 'black',
     borderRadius: 100,
   },
-chipIcon: {
-    width: 13,
-    height: 13,
-    tintColor: 'white',
-},
 overlay: {
     backgroundColor: 'rgba(0, 0, 0, 0.50)',
     ...StyleSheet.absoluteFillObject,

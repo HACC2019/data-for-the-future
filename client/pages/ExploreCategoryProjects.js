@@ -9,28 +9,40 @@ import { Actions } from 'react-native-router-flux';
 export class ExploreCategoryProjects extends React.Component {
 
     listdata = [
-        {title: 'Test1', date:'Nov 12', participants: 5, image: 'http://www.hawaiimagazine.com/sites/default/files/field/image/HiM1708-AY-Biki-Bikes-6377.jpg'},
-        {title: 'Test2', date:'Nov 13', participants: 10, image: 'http://www.hawaiimagazine.com/sites/default/files/field/image/HiM1708-AY-Biki-Bikes-6377.jpg' },
-        {title: 'Test3', date:'Nov 14', participants: 15,  image: 'http://www.hawaiimagazine.com/sites/default/files/field/image/HiM1708-AY-Biki-Bikes-6377.jpg'},
-    ]
+        {title: 'Waikiki Biking', date:'Nov 12', participants: 9, image: 'http://www.hawaiimagazine.com/sites/default/files/field/image/HiM1708-AY-Biki-Bikes-6377.jpg'},
+        {title: 'Beach Cleanup', date:'Nov 13', participants: 10, image: 'https://carpwc.lbdcreative.pro/wp-content/uploads/2018/03/beachcleanup_nb-940d3801.jpeg' },
+        {title: 'School Lunch Sorting', date:'Nov 20', participants: 15,  image: 'http://www.lesswaste.org.uk/wp-content/uploads/2016/03/Utilise-distro-350x220.jpg'},
+        {title: 'KCC Farmers Market', date:'Dec 10', participants: 50,  image: 'https://www.hawaiiliving.com/blog/wp-content/uploads/2014/05/KCC-Farmers-Market-Sign.jpg'},
+        {title: 'Restore the Forest', date:'Dec 30', participants: 20,  image: 'http://geographicconsulting.com/wp-content/uploads/2013/04/4-02Seast-640x475.jpg'},
 
-    renderCard = (item, index) => {
+      ]
+
+    renderCard = ({item}) => (
         <ProjectCard projectTitle={`${item.title}`} projectDate={`${item.date}`}
-        projectParticipants={`${item.participants}`} projectDate={`${item.image}`}/>
-    }
+        projectParticipants={item.participants} projectImage={`${item.image}`}/>
+    )
 
   render() {
     return (
       <View style={styles.container}>
-      <CategoryHeader categoryTitle={category.title} categoryDescription={category.description} categoryIcon={category.icon} categoryBg={category.bg} categoryGoal={category.goal}></CategoryHeader>
+      {/* <CategoryHeader categoryTitle={this.props.category.title}
+      categoryDescription={this.props.category.description}
+      categoryIcon={this.props.category.icon}
+      categoryBg={this.props.category.bg} 
+      ategoryGoal={this.props.category.goal}></CategoryHeader>
+       */}
         <ScrollView bounces={false} bouncesZoom={false} 
         alwaysBounceVertical={false} alwaysBounceHorizontal={false} {...this.props}>
-            <List contentContainerStyle={styles.listStyle} data={listdata}
+            <List contentContainerStyle={styles.listStyle} data={this.listdata}
             renderItem={this.renderCard}/>
         </ScrollView>
       </View>
     );
   }
+}
+
+ExploreCategoryProjects.propTypes = {
+  category: PropTypes.object
 }
 
 const styles = StyleSheet.create({

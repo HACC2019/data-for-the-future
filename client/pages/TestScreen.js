@@ -6,6 +6,8 @@ import { Actions } from 'react-native-router-flux';
 
 export const TestScreen = () => (
   <Layout style={styles.container}>
+
+  <Text category='h1'>Demo Screens</Text>
     <Button style={styles.navigation} onPress={Actions.ExploreCategories}>
      ExploreCategories
     </Button>

@@ -1,13 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet, TouchableOpacity,
-    ImageBackground, View,  } from 'react-native';
-import { Text } from 'react-native-ui-kitten';
+    ImageBackground, Image, View,  } from 'react-native';
+import { Text, Icon } from 'react-native-ui-kitten';
 import { Actions } from 'react-native-router-flux';
-
-
-
-
 
 import CustomIcon from '../components/CustomIcon'
 
@@ -17,6 +13,7 @@ export class CategoryButton extends React.Component {
     category
   })
 
+  bg = this.props.categoryBg;;
   render() {
     return (
     <TouchableOpacity activeOpacity={0.95} onPress={() => this.gotoCategoryProjects(
@@ -27,11 +24,12 @@ export class CategoryButton extends React.Component {
         bg: `${this.props.categoryBg}`,
         goal: `${this.props.categoryGoal}`,
       }})}>
-        <ImageBackground style={styles.container} source={{uri: `${this.props.categoryBg}`}}>
+        <ImageBackground style={styles.container}
+        source={{uri: `${this.props.categoryBg}`}}>
         <View style={styles.overlay}>
             <View>
-                <CustomIcon size={50} name={this.props.categoryIcon} style={styles.icon} />
-                <Text style={styles.levelLabel} appearance='h5'> 
+            <Icon name={this.props.categoryIcon} width={50} height={50} fill='#FFFFFF' />
+                <Text style={styles.levelLabel} appearance='h1'> 
                     {this.props.categoryTitle}
                 </Text>
             </View>
@@ -71,16 +69,14 @@ CategoryButton.propTypes = {
 
 const styles = StyleSheet.create({
 container: {
-    height: 200,
+    height: 100,
     padding: 16,
     borderRadius: 12,
     justifyContent: 'center',
     alignContent: 'center',
     overflow: 'hidden',
-    flexDirection: 'row',
     marginVertical: 8,
-    width: '90%',
-    ...elevationShadowStyle(5)
+    ...elevationShadowStyle(6)
   },
 levelLabel: {
     color: 'white',
@@ -88,8 +84,6 @@ levelLabel: {
 titleLabel: {
     color: 'white',
 },
-icon: {
-    color: 'white',
-},
+
 
 });
