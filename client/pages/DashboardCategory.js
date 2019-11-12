@@ -5,7 +5,7 @@ import { Button, Layout, Text, List } from 'react-native-ui-kitten';
 import { CategoryButton } from '../components/CategoryButton';
 import { Actions } from 'react-native-router-flux';
 
-export class Dashboard extends React.Component {
+export class DashboardCategory extends React.Component {
 
 
   render() {
