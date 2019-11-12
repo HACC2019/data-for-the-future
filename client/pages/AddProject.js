@@ -1,13 +1,16 @@
 import React from 'react';
 import { StyleSheet, Keyboard, TouchableWithoutFeedback } from 'react-native';
 import { Button, Layout, Text } from 'react-native-ui-kitten';
-import { AddProject1 } from '../components/NewProject/AddProject1';
-import { AddProject2 } from '../components/NewProject/AddProject2';
-import { AddProject3 } from '../components/NewProject/AddProject3';
-import { AddProject4 } from '../components/NewProject/AddProject4';
+import { AddProject1 } from '../components/AddProject/AddProject1';
+import { AddProject2 } from '../components/AddProject/AddProject2';
+import { AddProject3 } from '../components/AddProject/AddProject3';
+import { AddProject4 } from '../components/AddProject/AddProject4';
 
 
-//todo: add upload picture, hostid= currentid, 
+//TODO
+// - upload picture
+// - google maps: choose location
+// - set hostid = currentuserid
 
 export class AddProject extends React.Component {
 
