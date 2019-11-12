@@ -92,8 +92,8 @@ module.exports = [
     handler: async function(request) {
       try {
         const result = await models.Report.build({
-          indicatorID: request.payload.indicatorID,
-          projectID: request.payload.projectID,
+          indicatorId: request.payload.indicatorId,
+          projectId: request.payload.projectId,
           metric: request.payload.metric
         })
         return result.save();
@@ -107,8 +107,8 @@ module.exports = [
       try {
         const result = await models.Report.findByPk(request.params.id)
         result.update({
-          indicatorID: request.payload.indicatorID,
-          projectID: request.payload.projectID,
+          indicatorId: request.payload.indicatorId,
+          projectId: request.payload.projectId,
           metric: request.payload.metric
         })
         return result.save();
@@ -155,10 +155,10 @@ module.exports = [
           summary: request.payload.summary,
           longitude: request.payload.longitude,
           latitude: request.payload.latitude,
-          endsDate: request.payload.endsDate
+          endsAt: request.payload.endsAt
         })
         return result.save();
-      } catch (err) {return Boom.notFound();}
+      } catch (err) { console.log(err); return Boom.notFound();}
     }
   },
   {
@@ -172,7 +172,7 @@ module.exports = [
           summary: request.payload.summary,
           longitude: request.payload.longitude,
           latitude: request.payload.latitude,
-          endsDate: request.payload.endsDate
+          endsAt: request.payload.endsAt
         })
         return result.save();
       } catch (err) {return Boom.notFound();};
@@ -214,7 +214,7 @@ module.exports = [
     handler: async function(request) {
       try {
         const result = await models.Indicator.build({
-          categoryID: request.payload.categoryID,
+          categoryId: request.payload.categoryId,
           name: request.payload.name,
           unit: request.payload.unit,
           description: request.payload.description
@@ -230,7 +230,7 @@ module.exports = [
       try {
         const result = await models.Indicator.findByPk(request.params.id)
         result.update({
-          categoryID: request.payload.categoryID,
+          categoryId: request.payload.categoryId,
           name: request.payload.name,
           unit: request.payload.unit,
           description: request.payload.description

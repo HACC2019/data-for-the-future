@@ -1,8 +1,8 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const indicatorProjects = sequelize.define('IndicatorProject', {
-    projectID: DataTypes.INTEGER,
-    indicatorID: DataTypes.INTEGER,
+    projectId: DataTypes.INTEGER,
+    indicatorId: DataTypes.INTEGER,
     metricMeasurement: DataTypes.FLOAT
   }, {});
   indicatorProjects.associate = function(models) {

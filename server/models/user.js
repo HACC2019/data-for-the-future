@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
     phoneNumber: DataTypes.INTEGER
   }, {});
   user.associate = function(models) {
-    user.belongsToMany(models.Project, {through: 'ProjectUsers', foreignKey: 'userID', as: 'projects'})
+    user.belongsToMany(models.Project, {through: 'ProjectUsers', foreignKey: 'userId', as: 'projects'})
   };
   return user;
 };

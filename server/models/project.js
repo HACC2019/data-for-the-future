@@ -5,12 +5,12 @@ module.exports = (sequelize, DataTypes) => {
     summary: DataTypes.STRING,
     longitude: DataTypes.FLOAT,
     latitude: DataTypes.FLOAT,
-    endsDate: DataTypes.INTEGER
+    endsAt: DataTypes.DATE
   }, {});
   project.associate = function(models) {
-    project.belongsToMany(models.User, {through: 'UserProjects', foreignKey: 'projectID', as: 'contributor'})
-    project.belongsToMany(models.Category, {through: 'ProjectCategories', foreignKey: 'categoryID', as: 'listing'})
-    project.belongsToMany(models.Indicator, {through: 'ProjectIndicators', foreignKey: 'indicatorID', as: 'measurement'})
+    project.belongsToMany(models.User, {through: 'UserProjects', foreignKey: 'projectId', as: 'contributor'})
+    project.belongsToMany(models.Category, {through: 'ProjectCategories', foreignKey: 'categoryId', as: 'listing'})
+    project.belongsToMany(models.Indicator, {through: 'ProjectIndicators', foreignKey: 'indicatorId', as: 'measurement'})
   };
   return project;
 };

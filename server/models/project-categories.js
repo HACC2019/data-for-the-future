@@ -1,8 +1,8 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const ProjectCategory = sequelize.define('ProjectCategory', {
-    projectID: DataTypes.INTEGER,
-    categoryID: DataTypes.INTEGER,
+    projectId: DataTypes.INTEGER,
+    categoryId: DataTypes.INTEGER,
   }, {});
   ProjectCategory.associate = function(models) {
     ProjectCategory.belongsTo(models.Project, {foreignKey: 'id'})
