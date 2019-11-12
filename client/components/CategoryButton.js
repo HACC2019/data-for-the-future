@@ -1,30 +1,36 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { StyleSheet, TouchableOpacity,
-    ImageBackground, StyleSheet, View,  } from 'react-native';
+    ImageBackground, View,  } from 'react-native';
 import { Text } from 'react-native-ui-kitten';
+import { Actions } from 'react-native-router-flux';
 
-import CustomIcon from './components/CustomIcon'
 
+
+
+
+import CustomIcon from '../components/CustomIcon'
 
 export class CategoryButton extends React.Component {
   
   gotoCategoryProjects = ({ category }) => Actions.ExploreCategoryProjects({
-    category: {
+    category
+  })
+
+  render() {
+    return (
+    <TouchableOpacity activeOpacity={0.95} onPress={() => this.gotoCategoryProjects(
+      {category: {
         title: `${this.props.categoryTitle}`,
         description: `${this.props.categoryDescription}`,
         icon: `${this.props.categoryIcon}`,
         bg: `${this.props.categoryBg}`,
         goal: `${this.props.categoryGoal}`,
-    }
-  })
-
-  render() {
-    return (
-    <TouchableOpacity activeOpacity={0.95} onPress={this.gotoCategoryProjects}>
+      }})}>
         <ImageBackground style={styles.container} source={{uri: `${this.props.categoryBg}`}}>
         <View style={styles.overlay}>
             <View>
-                <CustomIcon name={this.props.categoryIcon} style={styles.icon} />
+                <CustomIcon size={50} name={this.props.categoryIcon} style={styles.icon} />
                 <Text style={styles.levelLabel} appearance='h5'> 
                     {this.props.categoryTitle}
                 </Text>
@@ -71,7 +77,7 @@ container: {
     justifyContent: 'center',
     alignContent: 'center',
     overflow: 'hidden',
-    flexDirection: row,
+    flexDirection: 'row',
     marginVertical: 8,
     width: '90%',
     ...elevationShadowStyle(5)
@@ -83,7 +89,6 @@ titleLabel: {
     color: 'white',
 },
 icon: {
-    size: 50,
     color: 'white',
 },
 

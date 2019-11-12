@@ -1,7 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { StyleSheet, TouchableOpacity,
-    ImageBackground, StyleSheet,
-    View, ViewStyle } from 'react-native';
+    ImageBackground, View } from 'react-native';
 import { Text, Icon } from 'react-native-ui-kitten';
 
 
@@ -53,7 +53,6 @@ ProjectCard.defaultProps = {
 };
 
 
-s
 function elevationShadowStyle(elevation) {
     return {
       elevation,
@@ -72,7 +71,7 @@ container: {
     justifyContent: 'center',
     alignContent: 'center',
     overflow: 'hidden',
-    flexDirection: row,
+    flexDirection: 'row',
     marginVertical: 8,
     ...elevationShadowStyle(5)
   },

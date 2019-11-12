@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { ScrollView, ScrollViewProps, StyleSheet, View  } from 'react-native';
 import { Button, Layout, Text, List } from 'react-native-ui-kitten';
 import { ProjectCard } from '../components/ProjectCard';

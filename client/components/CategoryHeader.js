@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { StyleSheet, TouchableOpacity,
-    ImageBackground, StyleSheet, View, Linking } from 'react-native';
+    ImageBackground, View, Linking } from 'react-native';
 import { Text } from 'react-native-ui-kitten';
 
-import CustomIcon from './components/CustomIcon'
+import CustomIcon from '../components/CustomIcon'
 
 
 export class CategoryHeader extends React.Component {
@@ -17,7 +18,7 @@ export class CategoryHeader extends React.Component {
         <ImageBackground style={styles.container} source={{uri: `${this.props.categoryBg}`}}>
         <View style={styles.overlay}>
             <View>
-                <CustomIcon name={this.props.categoryIcon} style={styles.icon} />
+                <CustomIcon size={50} name={this.props.categoryIcon} style={styles.icon} />
                 <Text style={styles.levelLabel} appearance='h5'> 
                     {this.props.categoryTitle}
                 </Text>
@@ -49,7 +50,7 @@ container: {
     height: 200,
     justifyContent: 'center',
     alignContent: 'center',
-    flexDirection: row,
+    flexDirection: 'row',
     marginVertical: 8,
     flex: 1
   },
@@ -60,7 +61,6 @@ titleLabel: {
     color: 'white',
 },
 icon: {
-    size: 50,
     color: 'white'
 },
 
