@@ -4,10 +4,7 @@ import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import { ApplicationProvider, IconRegistry, Layout } from 'react-native-ui-kitten';
 import { Router, Stack, Scene } from 'react-native-router-flux';
 
-import { HomeScreen } from './pages/HomeScreen';
-import { Project } from './pages/Project';
-import { ExploreCategories } from './pages/ExploreCategories';
-import { ExploreProjects } from './pages/ExploreProjects';
+
 import { AddProject } from './pages/AddProject';
 
 const App = () => (
@@ -16,11 +13,7 @@ const App = () => (
     <ApplicationProvider mapping={mapping} theme={lightTheme}>
       <Router>
         <Stack key="root">
-          <Scene key="HomeScreen" component={HomeScreen} initial />
-          <Scene key="Project" component={Project} />
-          <Scene key="ExploreCategories" component={ExploreCategories} />
-          <Scene key="ExploreProjects" component={ExploreProjects} />
-          <Scene key="AddProject" component={AddProject} />
+          <Scene key="AddProject" component={AddProject} initial/>
         </Stack>
       </Router>
     </ApplicationProvider>
