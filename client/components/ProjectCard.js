@@ -82,6 +82,8 @@ titleLabel: {
 },
 chips: {
     width: 50,
+    padding: 10,
+    margin: 10,
 },
 chipsText: {
     color: 'white',
@@ -97,5 +99,10 @@ chipContainer: {
 overlay: {
     backgroundColor: 'rgba(0, 0, 0, 0.50)',
     ...StyleSheet.absoluteFillObject,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignContent: 'center',
+    alignItems:'center',
 }
+
 });

@@ -26,10 +26,10 @@ export class CategoryButton extends React.Component {
       }})}>
         <ImageBackground style={styles.container}
         source={{uri: `${this.props.categoryBg}`}}>
-        <View style={styles.overlay}>
+        <View>
             <View>
             <Icon name={this.props.categoryIcon} width={50} height={50} fill='#FFFFFF' />
-                <Text style={styles.levelLabel} appearance='h1'> 
+                <Text style={styles.levelLabel} category='h6'> 
                     {this.props.categoryTitle}
                 </Text>
             </View>
@@ -69,7 +69,7 @@ CategoryButton.propTypes = {
 
 const styles = StyleSheet.create({
 container: {
-    height: 100,
+    height: 115,
     padding: 16,
     borderRadius: 12,
     justifyContent: 'center',
