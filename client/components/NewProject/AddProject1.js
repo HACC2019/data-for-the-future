@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import { Layout, Select } from 'react-native-ui-kitten';
+import { Text, Layout, Select } from 'react-native-ui-kitten';
 
 // Select Categories
 export class AddProject1 extends React.Component {
@@ -15,28 +15,31 @@ export class AddProject1 extends React.Component {
   ];
 
   state = {
-    selectedOption: [],
+    categories: [],
   };
 
-  onSelect = (selectedOption) => {
-    this.setState({ selectedOption });
+  onSelect = (categories) => {
+    this.setState({ categories });
   };
 
   render() {
     return (
       <Layout>
+        <Text category='h5'>Choose Categories</Text>
         <Select
           data={this.data}
           multiSelect={true}
-          selectedOption={this.state.selectedOption}
+          selectedOption={this.state.categories}
           onSelect={this.onSelect}
+          placeholder='Aloha+ Categories'
         />
-      </Layout>
+        </Layout>
     );
   }
 }
 
 const styles = StyleSheet.create({
   container: {
+    flexDirection: 'row',
   },
 });

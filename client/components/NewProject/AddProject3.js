@@ -1,12 +1,14 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import { Input, Layout } from 'react-native-ui-kitten';
+import { Input, Text, Layout } from 'react-native-ui-kitten';
 
 export class AddProject3 extends React.Component {
 
   state = {
     title: '',
     description: '',
+    email: '',
+    phone: ''
   };
 
   onTitleChange = (title) => {
@@ -16,10 +18,18 @@ export class AddProject3 extends React.Component {
   onDescriptionChange = (description) => {
     this.setState({ description });
   };
+  onEmailChange = (email) => {
+    this.setState({ email });
+  };
+  onPhoneChange = (phone) => {
+    this.setState({ phone });
+  };
+
 
   render() {
     return (
       <Layout>
+        <Text category='h5'>Project Details</Text>
         <Input
           placeholder='Title'
           value={this.state.title}
@@ -29,13 +39,31 @@ export class AddProject3 extends React.Component {
           placeholder='Description'
           value={this.state.description}
           onChangeText={this.onDescriptionChange}
+          style={styles.description}
+          TextInputProps={{multiline: true}}
+
         />
+        <Input
+          placeholder='Contact Email'
+          value={this.state.email}
+          onChangeText={this.onEmailChange}
+        />
+        <Input
+          placeholder='Contact Phone'
+          value={this.state.phone}
+          onChangeText={this.onPhoneChange}
+        />
+
       </Layout>
     );
   }
 }
 const styles = StyleSheet.create({
   container: {
+    flexDirection: 'row',
   },
+  description: {
+    height: 'auto',
+  }
 
 });

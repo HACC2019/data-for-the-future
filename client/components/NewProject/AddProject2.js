@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 
-import { Layout, Select } from 'react-native-ui-kitten';
+import { Text, Layout, Select } from 'react-native-ui-kitten';
 
 
 // Select Indicators from Categories
@@ -15,21 +15,24 @@ export class AddProject2 extends React.Component {
   ];
 
   state = {
-    selectedOption: [],
+    indicators: [],
   };
 
-  onSelect = (selectedOption) => {
-    this.setState({ selectedOption });
+  onSelect = (indicators) => {
+    this.setState({ indicators });
   };
 
   render() {
     return (
       <Layout>
+        <Text category='h5'>Choose Indicators</Text>
+        <Text category='label'>Clean Energy</Text>
         <Select
           data={this.data}
           multiSelect={true}
-          selectedOption={this.state.selectedOption}
+          selectedOption={this.state.indicators}
           onSelect={this.onSelect}
+          placeholder='Category Indicators'
         />
       </Layout>
     );
@@ -38,5 +41,6 @@ export class AddProject2 extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
+    flexDirection: 'row',
   },
 });
