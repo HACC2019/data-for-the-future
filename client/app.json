@@ -29,7 +29,7 @@
         "NSAppTransportSecurity" : {
           "NSExceptionDomans": {
             "localhost" : {
-              "NSTemporaryExceptionAllowsInsecureHTTPLoads": true,
+              "NSTemporaryExceptionAllowsInsecureHTTPLoads": true
             }
           }
         }
