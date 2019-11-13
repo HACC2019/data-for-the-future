@@ -1,14 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet, View, Image, ScrollView } from 'react-native';
-import {
-  Layout,
-  Icon,
-  TopNavigation,
-  TopNavigationAction,
-  Text,
-  Avatar
-} from 'react-native-ui-kitten';
+import { Layout, Icon, Text } from 'react-native-ui-kitten';
 import { IndicatorStats } from '../components/ProjectPage/IndicatorStats';
 
 
@@ -71,22 +64,9 @@ export class ProjectPage extends React.Component {
               <View>
                 <Text style={styles.title}category="h6">Project Statistics</Text>
                 <View style={styles.flexRow}>
-                  {
-                    this.props.statistics.map(({
-                      category,
-                      metric,
-                      unit,
-                      description
-                    }) => (
-                      <IndicatorStats
-                        key={category}
-                        category={category}
-                        metric={metric}
-                        unit={unit}
-                        description={description}
-                      />
-                    ))
-                  }
+                  {this.props.statistics.map(({category, metric, unit, description}) => (
+                      <IndicatorStats key={category} category={category} metric={metric} unit={unit} description={description}/>
+                    ))}
                 </View>
             </View>
       </Layout>

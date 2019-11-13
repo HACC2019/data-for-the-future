@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet, View } from 'react-native';
-import { Button, Layout, Text } from 'react-native-ui-kitten';
+import { Text } from 'react-native-ui-kitten';
 
 export class IndicatorStats extends React.Component {
 
@@ -9,7 +9,7 @@ export class IndicatorStats extends React.Component {
   render() {
     return (
       <View style={styles.statistic}>
-      <Text style={styles.title} category="s1">
+      <Text category="s1">
         {this.props.category}
       </Text>
       <Text category="h6">
