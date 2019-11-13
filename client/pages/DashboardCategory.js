@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {  StyleSheet, ScrollView, Image, Dimensions  } from 'react-native';
 import { Button, Layout, Text, List } from 'react-native-ui-kitten';
-import { CategoryButton } from '../components/CategoryButton';
-import { Actions } from 'react-native-router-flux';
+import { CategoryHeader } from '../components/CategoryButton';
+import { IndicatorStats } from '../components/IndicatorStats';
 
 export class DashboardCategory extends React.Component {
 
@@ -12,7 +12,14 @@ export class DashboardCategory extends React.Component {
     return (
       <ScrollView style={styles.container} bounces={false} bouncesZoom={false} 
         alwaysBounceVertical={false} alwaysBounceHorizontal={false} {...this.props}>
-          <Image resizeMode={'contain'}style={styles.image} source={{uri: 'https://i.ibb.co/TRYwLG6/Dashboard-category.png'}}></Image>
+      <CategoryHeader style={{flex: 1}} categoryTitle={this.props.category.title}
+      categoryDescription={this.props.category.description}
+      categoryIcon={this.props.category.icon}
+      categoryBg={this.props.category.bg} 
+      ategoryGoal={this.props.category.goal}></CategoryHeader>
+
+      <IndicatorStats></IndicatorStats>
+
         </ScrollView>
     );
   }
