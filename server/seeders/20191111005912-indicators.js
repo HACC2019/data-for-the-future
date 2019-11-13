@@ -250,6 +250,14 @@ module.exports = {
            description: 'by County',
            createdAt: new Date(),
            updatedAt: new Date()
+         },
+         {
+          categoryId: 6,
+          name: 'Number of public schools participating in initiative',
+          unit: 'schools',
+          description: '',
+          createdAt: new Date(),
+          updatedAt: new Date()
          }
        ], {});
 
