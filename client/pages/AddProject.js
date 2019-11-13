@@ -49,5 +49,5 @@ export class AddProject extends React.Component {
 
 const styles = StyleSheet.create({
   container: { flex: 1, paddingHorizontal: 16, paddingVertical: 8},
-  form: { padding: 20, marginVertical: 20},
+  form: { padding: 20, marginBottom:30},
 });
