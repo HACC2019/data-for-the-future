@@ -3,20 +3,35 @@ const Boom = require('boom');
 module.exports = [
   // Begin association RESTful API
   {
-    path: '/user/project/{id}', // userId
+    path: '/user/{id}/project', // userId
     method: 'GET',
     handler: async function(request) {
       try {
         const result = await models.User.findAll({
           where: {id: request.params.id},
-          include: [{model: models.Project, as: 'projects'}]
+          include: [{
+            model: models.Project, 
+            as: 'projects',
+            include: [{
+              model: models.Category,
+              as: 'listing'
+            }],
+            include: [{
+              model: models.Indicator,
+              as: 'measurement'
+            }],
+            include: [{
+              model: models.Report,
+              as: 'report'
+            }]
+          }]
         })
         return result;
       } catch (err) {console.log(err);return Boom.notFound();}
     }
   },
   {
-    path: '/project/report/{id}',
+    path: '/project/{id}/report',
     method: 'GET',
     handler: async function(request) {
       try {
@@ -26,6 +41,12 @@ module.exports = [
             {
               model: models.Report,
               as: 'report',
+              include: [
+                {
+                  model: models.Indicator,
+                  as: 'indicator'
+                }
+              ]
             }
           ] 
         })
@@ -37,7 +58,7 @@ module.exports = [
     }
   },
   {
-    path: '/project/categories/{id}',
+    path: '/project/{id}/categories',
     method: 'GET',
     handler: async function(request) {
       try {
@@ -50,7 +71,7 @@ module.exports = [
     }
   },
   {
-    path: '/project/indicator/{id}',
+    path: '/project/{id}/indicator',
     method: 'GET',
     handler: async function(request) {
       try {
@@ -63,7 +84,7 @@ module.exports = [
     }
   },
   {
-    path: '/project/user/{id}',
+    path: '/project/{id}/user',
     method: 'GET',
     handler: async function(request) {
       try {
@@ -76,7 +97,7 @@ module.exports = [
     }
   },
   {
-    path: '/categories/indicator/{id}',
+    path: '/categories/{id}/indicator',
     method: 'GET',
     handler: async function(request) {
       try {
@@ -89,13 +110,33 @@ module.exports = [
     }
   },
   {
-    path: '/categories/project/{id}',
+    path: '/categories/{id}/project',
     method: 'GET',
     handler: async function(request) {
       try {
         const result = await models.Category.findAll({
           where: {id: request.params.id},
           include: [{model: models.Project, as: 'origin'}]
+        })
+        return result;
+      } catch (err) {return Boom.notFound();}
+    }
+  },
+  {
+    path: '/report/{id}',
+    method: 'GET',
+    handler: async function(request) {
+      try {
+        const result = await models.Report.findAll({
+          where: {id: request.params.id},
+          include: [{
+            model: models.Project, 
+            as: 'project'
+          }],
+          include: [{
+            model: models.Indicator,
+            as: 'indicator'
+          }]
         })
         return result;
       } catch (err) {return Boom.notFound();}
