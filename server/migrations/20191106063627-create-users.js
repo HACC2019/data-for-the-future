@@ -21,7 +21,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       profilePic: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       phoneNumber: {
         type: Sequelize.INTEGER
