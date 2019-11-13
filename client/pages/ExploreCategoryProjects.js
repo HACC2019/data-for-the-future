@@ -9,7 +9,7 @@ import { Actions } from 'react-native-router-flux';
 
 export class ExploreCategoryProjects extends React.Component {
   state = {
-    list = []
+    list: []
   }
 
   listdata = [
