@@ -12,10 +12,10 @@ const init = async () => {
     routes: {
       cors: true
     },
-    tls: {
-      key: fs.readFileSync('server.key'),
-      cert: fs.readFileSync('server.crt')
-    }
+    // tls: {
+    //   key: fs.readFileSync('server.key'),
+    //   cert: fs.readFileSync('server.crt')
+    // }
   });
 
   server.route(routes)
