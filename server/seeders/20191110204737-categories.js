@@ -6,7 +6,7 @@ module.exports = {
       {
         name: 'Clean Energy',
         icon: 'charging-outline',
-        description: 'Sustainability is the name of the game.',
+        description: '70% clean energy – 40% from renewable sources and 30% from efficiency, with a view towards 100% renewable energy by 2045',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -18,28 +18,28 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        name: 'Resources',
+        name: 'Natural Resource Management',
         icon: 'globe-2-outline',
         description: 'Sustainability is the name of the game.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        name: 'Waste',
+        name: 'Waste Reduction',
         icon: 'trash-outline',
         description: 'Sustainability is the name of the game.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        name: 'Communities',
+        name: 'Smart Sustainable Communities',
         icon: 'bulb-outline',
         description: 'Sustainability is the name of the game.',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        name: 'Education',
+        name: 'Green Workforce & Education',
         icon: 'people-outline',
         description: 'Sustainability is the name of the game.',
         createdAt: new Date(),

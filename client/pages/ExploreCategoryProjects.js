@@ -8,9 +8,6 @@ import { CategoryHeader } from '../components/CategoryHeader';
 import { Actions } from 'react-native-router-flux';
 
 export class ExploreCategoryProjects extends React.Component {
-  state = {
-    list: []
-  }
 
   listdata = [
     {title: 'Waikiki Biking', date:'Nov 12', participants: 9, image: 'http://www.hawaiimagazine.com/sites/default/files/field/image/HiM1708-AY-Biki-Bikes-6377.jpg'},
@@ -20,17 +17,28 @@ export class ExploreCategoryProjects extends React.Component {
     {title: 'Restore the Forest', date:'Dec 30', participants: 20,  image: 'http://geographicconsulting.com/wp-content/uploads/2013/04/4-02Seast-640x475.jpg'},
   ]
 
-  getProjects = async () => {
-  }
+  catToShow = this.props.category.id
+
+  // put all projects in App.js    pass projectslist to ExploreCategoryProjects and MyProjects through Actions
+  // projectslist = this.props.projects
+  // conditional rendering if catToShow is inside project.categories
+  // map through projectslist, only show projects with catToShow
+  // pass project to ProjectCard
+  // changeprops on ProjectPage
+
+
+
+  // getProjects = async () => {
+  // }
   
-  componentDidMount() {
-    axios.get(`http://localhost:3000/project/categories/${this.props.category.id}`)
-      .then(({ data }) => {
-        this.setState({
-          list: data
-        })
-      });
-  }
+  // componentDidMount() {
+  //   axios.get(`http://localhost:3000/project/categories/${this.props.category.id}`)
+  //     .then(({ data }) => {
+  //       this.setState({
+  //         list: data
+  //       })
+  //     });
+  // }
 
   renderCard = ({item}) => (
     <ProjectCard projectTitle={`${item.title}`} projectDate={`${item.date}`}

@@ -15,7 +15,28 @@ import Axios from 'axios';
 
 export class AddProject extends React.Component {
 
-  state = {
+  cat = (category) => {
+    switch (category.id) {
+      case 1:
+        break;
+      case 2:
+        break;
+      case 3:
+        break;
+      case 4:
+        break;
+      case 5:
+        break;
+      case 6:
+        break;    
+      default:
+        break;
+    }
+  }
+
+
+  initialFormState = {
+    id: null,
     categories: [],
     indicators: [],
     title: '',
@@ -26,6 +47,7 @@ export class AddProject extends React.Component {
       startDate: null,
       endDate: null,
     },
+    participants: 0,
     submit: false
   };
 
@@ -40,17 +62,15 @@ export class AddProject extends React.Component {
       <AddProject3 style={styles.form}/>
       <AddProject4 style={styles.form}/>
       
-      <TouchableWithoutFeedback
-        onPress={() => {
+      {/* <TouchableWithoutFeedback onPress={() => {
           Axios.post('http://localhost:3000/project', {
             name: this.state.title,
             summary: this.state.description,
             latitude: 10,
             longitude: 10,
             image: 'http://www.hawaiimagazine.com/sites/default/files/field/image/HiM1708-AY-Biki-Bikes-6377.jpg'
-          })
-        }}
-      >
+          }) }}> */}
+          <TouchableWithoutFeedback>
         <Button style={styles.form} status='success'>Submit</Button>
       </TouchableWithoutFeedback>
     </Layout>

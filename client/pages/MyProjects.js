@@ -17,6 +17,8 @@ export class MyProjects extends React.Component {
 
       ]
 
+      myId = 10;
+
     renderCard = ({item}) => (
         <ProjectCard projectTitle={`${item.title}`} projectDate={`${item.date}`}
         projectParticipants={item.participants} projectImage={`${item.image}`}/>

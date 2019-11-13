@@ -82,6 +82,7 @@ ProjectPage.propTypes = {
   participants: PropTypes.number.isRequired,
   summary: PropTypes.string.isRequired,
   report: PropTypes.string,
+  image: PropTypes.string,
   statistics: PropTypes.arrayOf(PropTypes.shape({
     category: PropTypes.string,
     metric: PropTypes.number,
@@ -92,7 +93,11 @@ ProjectPage.propTypes = {
 
 ProjectPage.defaultProps = {
   report: '',
-  statistics: []
+  statistics: [],
+  participants: 0,
+  summary: "Description of the event goes here.",
+  categories: [1],
+  project: "Data for the Future"
 };
 
 const styles = StyleSheet.create({

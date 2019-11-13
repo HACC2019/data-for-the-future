@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, Fragment} from 'react';
 import { mapping, light as lightTheme } from '@eva-design/eva';
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import { ApplicationProvider, IconRegistry, Layout } from 'react-native-ui-kitten';
@@ -24,7 +24,26 @@ import { MyImpactCategory } from './pages/MyImpactCategory';
 import { Dashboard } from './pages/Dashboard';
 import { DashboardCategory } from './pages/DashboardCategory';
 
-const App = () => (
+const App = () => {
+
+  const projectsList = [
+
+  ];
+
+  //setting state
+  const [projects, setProjects] = useState(projectsList);
+
+  //CRUD operations
+  const addNewProject = p => {
+    p.id = projects.length + 1;
+    p.image = 'https://us.123rf.com/450wm/sorincolac/sorincolac1611/sorincolac161100044/66153824-honolulu-hawaii-skyline-of-honolulu-diamond-head-volcano-including-the-hotels-and-buildings-on-waiki.jpg?ver=6';
+    p.participants = 0;
+    p.hostId = 10;
+    p.people = [];
+    setProjects([...projects, p]);
+  }
+
+  return (
   <React.Fragment>
     <IconRegistry icons={EvaIconsPack} />
     <ApplicationProvider mapping={mapping} theme={lightTheme}>
@@ -69,6 +88,6 @@ const App = () => (
       </Router>
     </ApplicationProvider>
   </React.Fragment>
-);
+)}
 
 export default App;
