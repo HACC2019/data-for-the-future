@@ -6,7 +6,6 @@ module.exports = (sequelize, DataTypes) => {
     metric: DataTypes.FLOAT
   }, {});
   report.associate = function(models) {
-    report.belongsTo(models.Project, {foreignKey: 'projectId', as: 'report'})
   };
   return report;
 };

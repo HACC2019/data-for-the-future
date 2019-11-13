@@ -20,6 +20,9 @@ module.exports = {
       latitude: {
         type: Sequelize.FLOAT
       },
+      image: {
+        type: Sequelize.STRING
+      },
       endsAt: {
         type: Sequelize.DATE
       },
