@@ -3,11 +3,19 @@
 const Hapi = require('@hapi/hapi');
 const routes = require('./routes/routes');
 const models = require('./models');
+const fs = require('fs');
 
 const init = async () => {
   const server = Hapi.server({
     port: 3000,
-    host: 'localhost'
+    host: 'localhost',
+    routes: {
+      cors: true
+    },
+    tls: {
+      key: fs.readFileSync('server.key'),
+      cert: fs.readFileSync('server.crt')
+    }
   });
 
   server.route(routes)

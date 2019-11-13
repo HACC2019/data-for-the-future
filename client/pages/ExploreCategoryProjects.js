@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import PropTypes from 'prop-types';
 import { ScrollView, ScrollViewProps, StyleSheet, View  } from 'react-native';
 import { Button, Layout, Text, List } from 'react-native-ui-kitten';
@@ -7,35 +8,51 @@ import { CategoryHeader } from '../components/CategoryHeader';
 import { Actions } from 'react-native-router-flux';
 
 export class ExploreCategoryProjects extends React.Component {
+  state = {
+    list = []
+  }
 
-    listdata = [
-        {title: 'Waikiki Biking', date:'Nov 12', participants: 9, image: 'http://www.hawaiimagazine.com/sites/default/files/field/image/HiM1708-AY-Biki-Bikes-6377.jpg'},
-        {title: 'Beach Cleanup', date:'Nov 13', participants: 10, image: 'https://carpwc.lbdcreative.pro/wp-content/uploads/2018/03/beachcleanup_nb-940d3801.jpeg' },
-        {title: 'School Lunch Sorting', date:'Nov 20', participants: 15,  image: 'http://www.lesswaste.org.uk/wp-content/uploads/2016/03/Utilise-distro-350x220.jpg'},
-        {title: 'KCC Farmers Market', date:'Dec 10', participants: 50,  image: 'https://www.hawaiiliving.com/blog/wp-content/uploads/2014/05/KCC-Farmers-Market-Sign.jpg'},
-        {title: 'Restore the Forest', date:'Dec 30', participants: 20,  image: 'http://geographicconsulting.com/wp-content/uploads/2013/04/4-02Seast-640x475.jpg'},
+  listdata = [
+    {title: 'Waikiki Biking', date:'Nov 12', participants: 9, image: 'http://www.hawaiimagazine.com/sites/default/files/field/image/HiM1708-AY-Biki-Bikes-6377.jpg'},
+    {title: 'Beach Cleanup', date:'Nov 13', participants: 10, image: 'https://carpwc.lbdcreative.pro/wp-content/uploads/2018/03/beachcleanup_nb-940d3801.jpeg' },
+    {title: 'School Lunch Sorting', date:'Nov 20', participants: 15,  image: 'http://www.lesswaste.org.uk/wp-content/uploads/2016/03/Utilise-distro-350x220.jpg'},
+    {title: 'KCC Farmers Market', date:'Dec 10', participants: 50,  image: 'https://www.hawaiiliving.com/blog/wp-content/uploads/2014/05/KCC-Farmers-Market-Sign.jpg'},
+    {title: 'Restore the Forest', date:'Dec 30', participants: 20,  image: 'http://geographicconsulting.com/wp-content/uploads/2013/04/4-02Seast-640x475.jpg'},
+  ]
 
-      ]
+  getProjects = async () => {
+  }
+  
+  componentDidMount() {
+    axios.get(`http://localhost:3000/project/categories/${this.props.category.id}`)
+      .then(({ data }) => {
+        this.setState({
+          list: data
+        })
+      });
+  
+    console.log(projects.data)
+  }
 
-    renderCard = ({item}) => (
-        <ProjectCard projectTitle={`${item.title}`} projectDate={`${item.date}`}
-        projectParticipants={item.participants} projectImage={`${item.image}`}/>
-    )
-
-      
-
+  renderCard = ({item}) => (
+    <ProjectCard projectTitle={`${item.title}`} projectDate={`${item.date}`}
+    projectParticipants={item.participants} projectImage={`${item.image}`}/>
+  )
+  
   render() {
     return (
       <View style={styles.container}>
-      <CategoryHeader style={{flex: 1}} categoryTitle={this.props.category.title}
-      categoryDescription={this.props.category.description}
-      categoryIcon={this.props.category.icon}
-      categoryBg={this.props.category.bg} 
-      ategoryGoal={this.props.category.goal}></CategoryHeader>
+      <CategoryHeader style={{flex: 1}}
+        categoryTitle={this.props.category.title}
+        categoryDescription={this.props.category.description}
+        categoryIcon={this.props.category.icon}
+        categoryBg={this.props.category.bg} 
+        ategoryGoal={this.props.category.goal}>
+      </CategoryHeader>
       
         <ScrollView style={{flex:5}} bounces={false} bouncesZoom={false} 
         alwaysBounceVertical={false} alwaysBounceHorizontal={false} {...this.props}>
-            <List contentContainerStyle={styles.listStyle} data={this.listdata}
+            <List contentContainerStyle={styles.listStyle} data={this.list}
             renderItem={this.renderCard}/>
         </ScrollView>
       </View>

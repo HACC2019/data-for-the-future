@@ -18,6 +18,7 @@ export class CategoryButton extends React.Component {
     return (
     <TouchableOpacity activeOpacity={0.95} onPress={() => this.gotoCategoryProjects(
       {category: {
+        id: this.props.categoryId,
         title: `${this.props.categoryTitle}`,
         description: `${this.props.categoryDescription}`,
         icon: `${this.props.categoryIcon}`,
@@ -42,6 +43,7 @@ export class CategoryButton extends React.Component {
 }
 
 CategoryButton.propTypes = {
+    categoryId: PropTypes.number.isRequired,
     categoryTitle: PropTypes.string.isRequired,
     categoryIcon: PropTypes.string.isRequired,
     categoryDescription: PropTypes.string.isRequired,
