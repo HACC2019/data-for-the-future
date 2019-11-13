@@ -14,7 +14,7 @@ export class ProjectCard extends React.Component {
     <TouchableOpacity activeOpacity={0.95} onPress={Actions.ProjectPage}>
         <ImageBackground style={styles.container} source={{uri: `${this.props.projectImage}`}}>
         <View style={styles.overlay}>
-            <View>
+            <View  style={styles.chipContainer}>
                 <Text style={styles.levelLabel} category='h5'> 
                     {this.props.projectTitle}
                 </Text>
@@ -64,7 +64,7 @@ function elevationShadowStyle(elevation) {
 
 const styles = StyleSheet.create({
 container: {
-    height: 200,
+    height: 175,
     padding: 16,
     borderRadius: 12,
     justifyContent: 'center',
@@ -87,22 +87,24 @@ chips: {
 },
 chipsText: {
     color: 'white',
+    margin: 10,
 },
 chipContainer: {
     flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
+    alignItems: 'flex-start',
+    justifyContent: 'space-around',
     paddingHorizontal: 10,
     paddingVertical: 4,
+    marginTop:4,
     borderRadius: 100,
   },
 overlay: {
-    backgroundColor: 'rgba(0, 0, 0, 0.40)',
+    backgroundColor: 'rgba(0, 0, 0, 0.45)',
     ...StyleSheet.absoluteFillObject,
     flexDirection: 'column',
-    justifyContent: 'center',
-    alignContent: 'center',
-    alignItems:'center',
+    justifyContent: 'flex-end',
+    alignItems:'flex-start',
+
 }
 
 });
