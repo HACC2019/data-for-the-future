@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { StyleSheet, View, Image, ScrollView, Dimensions } from 'react-native';
+import { StyleSheet, View, Image, ScrollView } from 'react-native';
 import {
   Layout,
   Icon,
@@ -9,71 +9,24 @@ import {
   Text,
   Avatar
 } from 'react-native-ui-kitten';
-import { StatisticCard } from '../components/Project/StatisticCard';
+import { IndicatorStats } from '../components/ProjectPage/IndicatorStats';
 
-const BackIcon = (style) => (
-  <Icon {...style} name='arrow-back'/>
-);
 
-const EditIcon = (style) => (
-  <Icon {...style} name='edit'/>
-);
+export class ProjectPage extends React.Component {
 
-const MenuIcon = (style) => (
-  <Icon {...style} name='more-vertical'/>
-);
 
-const BackAction = (props) => (
-  <TopNavigationAction {...props} icon={BackIcon}/>
-);
-
-const EditAction = (props) => (
-  <TopNavigationAction {...props} icon={EditIcon}/>
-);
-
-const MenuAction = (props) => (
-  <TopNavigationAction {...props} icon={MenuIcon}/>
-);
-
-export const Project = ({
-  project,
-  date,
-  categories,
-  participants,
-  summary,
-  report,
-  statistics,
-}) => {
-  const onBackPress = () => {
-  };
-
-  const renderLeftControl = () => (
-    <BackAction onPress={onBackPress}/>
-  );
-
-  const renderRightControls = () => [
-    <EditAction/>,
-    <MenuAction/>,
-  ];
-
-  return (
-    <Layout style={styles.container}>
-      <TopNavigation
-        style={styles.navigation}
-        title='Project Summary'
-        leftControl={renderLeftControl()}
-        rightControls={renderRightControls()}
-      />
+  render() {
+    return (
+      <ScrollView style={styles.container} bounces={false} bouncesZoom={false} 
+        alwaysBounceVertical={false} alwaysBounceHorizontal={false} {...this.props}>
       <Image
-        style={{ width: '100%', height: '25%' }}
+        style={{ width: '100%', height: 225 }}
         source={{ uri: 'http://www.hawaiimagazine.com/sites/default/files/field/image/HiM1708-AY-Biki-Bikes-6377.jpg' }}
       />
       <Layout style={styles.outer} level="3">
-        <Layout
-          style={[styles.body, { height: 400 }]}
-        >
-          <ScrollView style={{ flex: 1 }}>
-            <Text category="h2">{project}</Text>
+        <Layout style={styles.body}>
+          <ScrollView >
+            <Text category="h4">{this.props.project}</Text>
             <Layout style={[styles.flexRow, styles.padding]}>
               <Icon name='charging-outline' width={26} height={26} fill='#FF6961' />
               <Icon name='car-outline' width={26} height={26} fill='#FF6961' />
@@ -89,7 +42,7 @@ export const Project = ({
                 </Layout>
                 <Layout style={{ paddingTop: 4, paddingLeft: 2 }}>
                   <Text appearance="hint" category="c1">
-                    {date}
+                    {this.props.date}
                   </Text>
                 </Layout>
               </Layout>
@@ -99,34 +52,33 @@ export const Project = ({
                 </Layout>
                 <Layout style={{ paddingTop: 5, paddingLeft: 2 }}>
                   <Text appearance="hint" category="c1">
-                    {participants} participants
+                    {this.props.participants} participants
                   </Text>
                 </Layout>
               </Layout>
             </Layout>
-            <Text>
-              {summary}
+          </ScrollView>
+        </Layout>
+              <View>
+              <Text style={{marginTop:15}}>
+              {this.props.summary}
             </Text>
-            <Layout>
-              <Text style={styles.title} category="h5">Project Report</Text>
-              <Layout>
+            <Text style={styles.title} category="h6">Project Report</Text>
                 <Text>
-                  {report}
+                  {this.props.report}
                 </Text>
-              </Layout>
-              <Layout>
-                <Text style={styles.title}category="h5">Project Statistics</Text>
-                <Layout
-                  style={styles.flexRow}
-                >
+              </View>
+              <View>
+                <Text style={styles.title}category="h6">Project Statistics</Text>
+                <View style={styles.flexRow}>
                   {
-                    statistics.map(({
+                    this.props.statistics.map(({
                       category,
                       metric,
                       unit,
                       description
                     }) => (
-                      <StatisticCard
+                      <IndicatorStats
                         key={category}
                         category={category}
                         metric={metric}
@@ -135,17 +87,15 @@ export const Project = ({
                       />
                     ))
                   }
-                </Layout>
-              </Layout>
-            </Layout>
-          </ScrollView>
-        </Layout>
+                </View>
+            </View>
       </Layout>
-    </Layout>
-  );
-};
+      </ScrollView>
+    );
+  }
+}
 
-Project.propTypes = {
+ProjectPage.propTypes = {
   project: PropTypes.string.isRequired,
   categories: PropTypes.arrayOf(PropTypes.number).isRequired,
   date: PropTypes.string.isRequired,
@@ -160,16 +110,15 @@ Project.propTypes = {
   }))
 };
 
-Project.defaultProps = {
+ProjectPage.defaultProps = {
   report: '',
   statistics: []
 };
 
 const styles = StyleSheet.create({
-  container: { flex: 1, paddingTop: 10, alignContent: 'center' },
+  container: { flex: 1, alignContent: 'center' },
   outer: {
-    padding: 20,
-    height: '100%'
+    padding: 15,
   },
   body: {
     borderRadius: 10,

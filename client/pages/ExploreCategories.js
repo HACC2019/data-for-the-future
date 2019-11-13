@@ -1,96 +1,56 @@
 import React from 'react';
-import { StyleSheet, View, TouchableWithoutFeedback } from 'react-native';
-import { Button, Layout, Text, Icon } from 'react-native-ui-kitten';
-import { Actions } from 'react-native-router-flux';
-import { Card } from '../components/Card';
+import PropTypes from 'prop-types';
+import {  StyleSheet, View  } from 'react-native';
+import { Button, Layout, Text, List } from 'react-native-ui-kitten';
+import { CategoryButton } from '../components/CategoryButton';
 
-const categories = [
-  {
-    name: 'Clean Energy',
-    icon: 'charging-outline',
-    description: 'Sustainability is the name of the game.'
-  },
-  {
-    name: 'Local Food',
-    icon: 'car-outline',
-    description: 'Sustainability is the name of the game.'
-  },
-  {
-    name: 'Resources',
-    icon: 'globe-2-outline',
-    description: 'Sustainability is the name of the game.'
-  },
-  {
-    name: 'Waste',
-    icon: 'trash-outline',
-    description: 'Sustainability is the name of the game.'
-  },
-  {
-    name: 'Communities',
-    icon: 'bulb-outline',
-    description: 'Sustainability is the name of the game.'
-  },
-  {
-    name: 'Education',
-    icon: 'people-outline',
-    description: 'Sustainability is the name of the game.'
+export class ExploreCategories extends React.Component {
+
+
+
+  categories = [ {title:'Clean Energy', icon: 'charging-outline',
+  description:'70% clean energy – 40% from renewable sources and 30% from efficiency, with a view towards 100% renewable energy by 2045',
+  image:'https://i.ibb.co/d5n1kHt/energyBg.png', 
+  goal: 'http://aloha-challenge.hawaiigreengrowth.org/aloha-goals/clean-energy/'},
+  {title:'Local Food', icon: 'car-outline',
+  description:'At least double local food production: 0-30% of food consumed is grown locally',
+  image:'https://i.ibb.co/Y7tqmX2/foodBg.png', 
+  goal: 'http://aloha-challenge.hawaiigreengrowth.org/aloha-goals/local-food/'},
+  {title:'Natural Resource Management', icon: 'globe-2-outline',
+  description:'Reverse the trend of natural resource loss by increasing freshwater security, marine management, invasive species control and restoration',
+  image:'https://i.ibb.co/Dggk6qH/nrmBg.png', 
+  goal: 'http://aloha-challenge.hawaiigreengrowth.org/aloha-goals/natural-resource-management/'},
+  {title:'Waste Reduction', icon: 'trash-outline',
+  description:'Reduce solid waste stream prior to disposal by 70% through source reduction, recycling, bioconversion, and landfill diversion methods',
+  image:'https://i.ibb.co/W3pzPPK/wasteRb.png', 
+  goal: 'http://aloha-challenge.hawaiigreengrowth.org/aloha-goals/waste-reduction/'},
+  {title:'Smart Sustainable Communities', icon: 'bulb-outline',
+  description:'Increase livability and resilience through planning and implementation at the state and county levels',
+  image:'https://i.ibb.co/9T9ssKJ/communities-Bg.png', 
+  goal: 'http://aloha-challenge.hawaiigreengrowth.org/aloha-goals/smart-sustainable-communities/'},
+  {title:'Green Workforce & Education', icon: 'people-outline',
+  description:'Increase local green jobs and education to implement these targets',
+  image:'https://i.ibb.co/Fzxfst4/eduBg.png', 
+  goal: 'http://aloha-challenge.hawaiigreengrowth.org/aloha-goals/green-workforce-education/'}]
+  
+
+   renderCard = ({item}) => (
+        <CategoryButton categoryTitle={`${item.title}`} categoryDescription={`${item.description}`}
+        categoryIcon={`${item.icon}`} categoryBg={`${item.image}`} categoryGoal={`${item.goal}`}/>
+   )
+
+  render() {
+    return (
+        <View style={styles.container}>
+            <List contentContainerStyle={styles.listStyle}
+            data={this.categories}
+            renderItem={this.renderCard}/>
+        </View>
+    );
   }
-]
-
-const goToCategory = ({ category }) => Actions.ExploreProjects({
-  category
-})
-
-export const ExploreCategories = () => {
-  const retrieveCategories = () => {
-
-  }
-
-  return (
-    <Layout style={styles.container}>
-      <Text style={{ paddingTop: 15 }} category='h4'>Categories</Text>
-      <Text style={{ paddingBottom: 10 }} category="p1" appearance="hint">
-        Select a category to get involved.
-      </Text>
-      <Layout style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
-        {
-          categories.map(category => (
-            <Card
-              key={category.name}
-              name={category.name}
-              description={category.description}
-              icon={category.icon}
-              category={category}
-            />
-          ))
-        }
-      </Layout>
-    </Layout>
-  )
-};
-
-function elevationShadowStyle(elevation) {
-  return {
-    elevation,
-    shadowColor: 'black',
-    shadowOffset: { width: 0, height: 0.5 * elevation },
-    shadowOpacity: 0.3,
-    shadowRadius: 0.8 * elevation
-  };
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, alignItems: 'center' },
-  text: { marginVertical: 16 },
-  shadow: {
-    // Sweet! Android shadow!
-    ...elevationShadowStyle(5)
-  },
-  box: {
-    borderRadius: 8,
-    backgroundColor: 'white',
-    padding: 15,
-    margin: 10,
-    width: '45%'
-  }
+  container: { flex: 1},
+  listStyle: { paddingHorizontal: 16, paddingVertical: 8,},
 });
