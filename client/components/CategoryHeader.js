@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet, TouchableOpacity,
     ImageBackground, View, Linking } from 'react-native';
-import { Text } from 'react-native-ui-kitten';
+import { Text, Icon } from 'react-native-ui-kitten';
 
 import CustomIcon from '../components/CustomIcon'
 
@@ -14,16 +14,25 @@ export class CategoryHeader extends React.Component {
 
   render() {
     return (
-    <TouchableOpacity activeOpacity={0.95} onPress={this.gotoCategoryProjects}>
+    <TouchableOpacity activeOpacity={0.95} onPress={this.gotoCategoryGoal}>
         <ImageBackground style={styles.container} source={{uri: `${this.props.categoryBg}`}}>
-        <View style={styles.overlay}>
-            <View>
-                <CustomIcon size={50} name={this.props.categoryIcon} style={styles.icon} />
-                <Text style={styles.levelLabel} appearance='h5'> 
+            <View style={{flex:1, flexDirection:'column', justifyContent: 'center', alignItems: 'center'}}>
+            <View style={{flex:1, flexDirection:'row', padding: 5, justifyContent: 'center', alignItems: 'center'}}>
+              <View style={{flex:1}}>
+                <Icon name={this.props.categoryIcon} width={40} height={40} fill='#FFFFFF' />
+              </View>
+              <View style={{flex:5 }}>
+                <Text style={styles.levelLabel} category='h6'> 
                     {this.props.categoryTitle}
                 </Text>
+                </View>
             </View>
-        </View>
+            <View style={{flex: 2, margin: 5}}>
+                <Text style={styles.levelLabel} category='p1'> 
+                    {this.props.categoryDescription}
+                </Text>
+            </View>
+            </View>
         </ImageBackground>
     </TouchableOpacity>
     );
@@ -47,12 +56,10 @@ CategoryHeader.propTypes = {
 
 const styles = StyleSheet.create({
 container: {
-    height: 200,
+    height: 125,
     justifyContent: 'center',
     alignContent: 'center',
     flexDirection: 'row',
-    marginVertical: 8,
-    flex: 1
   },
 levelLabel: {
     color: 'white',

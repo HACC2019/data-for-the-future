@@ -17,7 +17,7 @@ export class ExploreCategories extends React.Component {
   image:'https://i.ibb.co/Y7tqmX2/foodBg.png', 
   goal: 'http://aloha-challenge.hawaiigreengrowth.org/aloha-goals/local-food/'},
   {title:'Natural Resource Management', icon: 'globe-2-outline',
-  description:'Reverse the trend of natural resource loss by increasing freshwater security, watershed production, marine management, invasive species control and restoration',
+  description:'Reverse the trend of natural resource loss by increasing freshwater security, marine management, invasive species control and restoration',
   image:'https://i.ibb.co/Dggk6qH/nrmBg.png', 
   goal: 'http://aloha-challenge.hawaiigreengrowth.org/aloha-goals/natural-resource-management/'},
   {title:'Waste Reduction', icon: 'trash-outline',

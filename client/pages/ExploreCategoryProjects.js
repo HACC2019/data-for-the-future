@@ -22,16 +22,18 @@ export class ExploreCategoryProjects extends React.Component {
         projectParticipants={item.participants} projectImage={`${item.image}`}/>
     )
 
+      
+
   render() {
     return (
       <View style={styles.container}>
-      {/* <CategoryHeader categoryTitle={this.props.category.title}
+      <CategoryHeader style={{flex: 1}} categoryTitle={this.props.category.title}
       categoryDescription={this.props.category.description}
       categoryIcon={this.props.category.icon}
       categoryBg={this.props.category.bg} 
       ategoryGoal={this.props.category.goal}></CategoryHeader>
-       */}
-        <ScrollView bounces={false} bouncesZoom={false} 
+      
+        <ScrollView style={{flex:5}} bounces={false} bouncesZoom={false} 
         alwaysBounceVertical={false} alwaysBounceHorizontal={false} {...this.props}>
             <List contentContainerStyle={styles.listStyle} data={this.listdata}
             renderItem={this.renderCard}/>
@@ -48,6 +50,7 @@ ExploreCategoryProjects.propTypes = {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    flexDirection:'column',
   },
   listStyle: { paddingHorizontal: 16, paddingVertical: 8},
 });
