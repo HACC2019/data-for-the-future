@@ -6,8 +6,8 @@ module.exports = (sequelize, DataTypes) => {
     metric: DataTypes.FLOAT
   }, {});
   report.associate = function(models) {
-    report.belongsTo(models.Project, {foreignKey: 'projectId', as: 'project'})
-    report.belongsTo(models.Indicator, {foreignKey: 'indicatorId', as: 'indicator'})
+    report.belongsTo(models.Project, {foreignKey: 'id', as: 'project'})
+    report.belongsTo(models.Indicator, {foreignKey: 'id', as: 'indicator'})
   };
   return report;
 };

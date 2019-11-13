@@ -7,7 +7,6 @@ import { DashboardButton } from '../components/DashboardButton';
 export class Dashboard extends React.Component {
 
 
-
   categories = [ {title:'Clean Energy', icon: 'charging-outline',
   description:'70% clean energy – 40% from renewable sources and 30% from efficiency, with a view towards 100% renewable energy by 2045',
   image:'https://i.ibb.co/d5n1kHt/energyBg.png', 

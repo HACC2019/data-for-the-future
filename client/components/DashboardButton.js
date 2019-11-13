@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { StyleSheet, TouchableOpacity,
-    ImageBackground, Image, View,  } from 'react-native';
+import { StyleSheet, TouchableOpacity, ImageBackground, View,  } from 'react-native';
 import { Text, Icon } from 'react-native-ui-kitten';
 import { Actions } from 'react-native-router-flux';
 
