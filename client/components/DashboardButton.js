@@ -5,18 +5,17 @@ import { StyleSheet, TouchableOpacity,
 import { Text, Icon } from 'react-native-ui-kitten';
 import { Actions } from 'react-native-router-flux';
 
-import CustomIcon from '../components/CustomIcon'
 
-export class CategoryButton extends React.Component {
+export class DashboardButton extends React.Component {
   
-  gotoCategoryProjects = ({ category }) => Actions.ExploreCategoryProjects({
+  gotoDashboardCategory = ({ category }) => Actions.DashboardCategory({
     category
   })
 
   bg = this.props.categoryBg;;
   render() {
     return (
-    <TouchableOpacity activeOpacity={0.95} onPress={() => this.gotoCategoryProjects(
+    <TouchableOpacity activeOpacity={0.95} onPress={() => this.gotoDashboardCategory(
       {category: {
         title: `${this.props.categoryTitle}`,
         description: `${this.props.categoryDescription}`,
@@ -41,7 +40,7 @@ export class CategoryButton extends React.Component {
   }
 }
 
-CategoryButton.propTypes = {
+DashboardButton.propTypes = {
     categoryTitle: PropTypes.string.isRequired,
     categoryIcon: PropTypes.string.isRequired,
     categoryDescription: PropTypes.string.isRequired,
@@ -49,7 +48,7 @@ CategoryButton.propTypes = {
     categoryGoal: PropTypes.string,
   };
   
-  CategoryButton.defaultProps = {
+  DashboardButton.defaultProps = {
     categoryTitle: 'CategoryTitle',
     categoryDescription: 'Default description',
     categoryIcon: 'person',

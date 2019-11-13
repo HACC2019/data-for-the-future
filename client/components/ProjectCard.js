@@ -21,11 +21,11 @@ export class ProjectCard extends React.Component {
             </View>
 
             <View style={styles.chipContainer}>
-                <Icon name='clock-outline' width={20} height={20} fill='#FFFFFF'/>
+                <Icon name='clock-outline' width={25} height={25} fill='#FFFFFF'/>
                 <Text style={styles.chipsText} category='label'>
                 {this.props.projectDate}  
                 </Text>
-                <Icon name='people-outline'width={20} height={20} fill='#FFFFFF'/>
+                <Icon name='people-outline'width={25} height={25} fill='#FFFFFF'/>
                 <Text style={styles.chipsText} category='label'>
                 {this.props.projectParticipants}
                 </Text>
@@ -97,7 +97,7 @@ chipContainer: {
     borderRadius: 100,
   },
 overlay: {
-    backgroundColor: 'rgba(0, 0, 0, 0.50)',
+    backgroundColor: 'rgba(0, 0, 0, 0.40)',
     ...StyleSheet.absoluteFillObject,
     flexDirection: 'column',
     justifyContent: 'center',
