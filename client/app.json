@@ -25,10 +25,12 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "NSAppTransportSecurity" : {
-        "NSExceptionDomans": {
-          "localhost" : {
-            "NSTemporaryExceptionAllowsInsecureHTTPLoads": true,
+      "infoPlist": {
+        "NSAppTransportSecurity" : {
+          "NSExceptionDomans": {
+            "localhost" : {
+              "NSTemporaryExceptionAllowsInsecureHTTPLoads": true,
+            }
           }
         }
       }
