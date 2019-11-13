@@ -22,10 +22,18 @@ module.exports = [
       try {
         const result = await models.Project.findAll({
           where: {id: request.params.id},
-          include: [{model: models.Report, as: 'report'}] 
+          include: [
+            {
+              model: models.Report,
+              as: 'report',
+            }
+          ] 
         })
         return result;
-      } catch (err) {return Boom.notFound();}
+      } catch (err) {
+        console.log(err)
+        return Boom.notFound();
+      }
     }
   },
   {
@@ -33,9 +41,9 @@ module.exports = [
     method: 'GET',
     handler: async function(request) {
       try {
-        const result = await models.Project.findAll({
+        const result = await models.Category.findAll({
           where: {id: request.params.id},
-          include: [{model: models.Category, as: 'listing'}] 
+          include: [{model: models.Project, as: 'origin'}] 
         })
         return result;
       } catch (err) {return Boom.notFound();}
