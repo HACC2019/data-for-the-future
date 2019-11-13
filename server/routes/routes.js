@@ -218,16 +218,16 @@ module.exports = [
       } catch (err) {return Boom.notFound();}
     }
   },
-  {
-    path: '/report/{id}',
-    method: 'GET',
-    handler: async function(request) {
-      try {
-        const result = await models.Report.findByPk(request.params.id);
-        return result;
-      } catch (err) {return Boom.notFound();}
-    }
-  },
+  // {
+  //   path: '/report/{id}',
+  //   method: 'GET',
+  //   handler: async function(request) {
+  //     try {
+  //       const result = await models.Report.findByPk(request.params.id);
+  //       return result;
+  //     } catch (err) {return Boom.notFound();}
+  //   }
+  // },
   {
     path: '/report',
     method: 'POST',
