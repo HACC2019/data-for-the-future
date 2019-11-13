@@ -1,12 +1,15 @@
 import React from 'react';
+import axios from 'axios';
 import PropTypes from 'prop-types';
 import {  StyleSheet, View  } from 'react-native';
 import { Button, Layout, Text, List } from 'react-native-ui-kitten';
 import { CategoryButton } from '../components/CategoryButton';
+import { Actions } from 'react-native-router-flux';
 
 export class ExploreCategories extends React.Component {
-
-
+  state = {
+    categories: []
+  }
 
   categories = [ {title:'Clean Energy', icon: 'charging-outline',
   description:'70% clean energy – 40% from renewable sources and 30% from efficiency, with a view towards 100% renewable energy by 2045',
@@ -33,19 +36,27 @@ export class ExploreCategories extends React.Component {
   image:'https://i.ibb.co/Fzxfst4/eduBg.png', 
   goal: 'http://aloha-challenge.hawaiigreengrowth.org/aloha-goals/green-workforce-education/'}]
   
+  componentDidMount() {
+    axios.get('https://localhost:3000/categories')
+      .then(({ data }) => {
+        console.log(data)
+        this.setState({ categories: data })
+      })
+      .catch(err => console.log(err))
+  }
 
-   renderCard = ({item}) => (
-        <CategoryButton categoryTitle={`${item.title}`} categoryDescription={`${item.description}`}
-        categoryIcon={`${item.icon}`} categoryBg={`${item.image}`} categoryGoal={`${item.goal}`}/>
-   )
+  renderCard = ({item}) => (
+    <CategoryButton categoryId={item.id} categoryTitle={`${item.name}`} categoryDescription={`${item.description}`}
+    categoryIcon={`${item.icon}`} categoryBg={`${item.image}`} categoryGoal={`${item.goal}`}/>
+  )
 
   render() {
     return (
-        <View style={styles.container}>
-            <List contentContainerStyle={styles.listStyle}
-            data={this.categories}
-            renderItem={this.renderCard}/>
-        </View>
+      <View style={styles.container}>
+        <List contentContainerStyle={styles.listStyle}
+        data={this.state.categories}
+        renderItem={this.renderCard}/>
+      </View>
     );
   }
 }
