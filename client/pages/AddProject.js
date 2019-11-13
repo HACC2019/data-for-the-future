@@ -5,6 +5,7 @@ import { AddProject1 } from '../components/AddProject/AddProject1';
 import { AddProject2 } from '../components/AddProject/AddProject2';
 import { AddProject3 } from '../components/AddProject/AddProject3';
 import { AddProject4 } from '../components/AddProject/AddProject4';
+import Axios from 'axios';
 
 
 //TODO
@@ -39,7 +40,19 @@ export class AddProject extends React.Component {
       <AddProject3 style={styles.form}/>
       <AddProject4 style={styles.form}/>
       
-      <Button style={styles.form} status='success'>Submit</Button>
+      <TouchableWithoutFeedback
+        onPress={() => {
+          Axios.post('http://localhost:3000/project', {
+            name: this.state.title,
+            summary: this.state.description,
+            latitude: 10,
+            longitude: 10,
+            image: 'http://www.hawaiimagazine.com/sites/default/files/field/image/HiM1708-AY-Biki-Bikes-6377.jpg'
+          })
+        }}
+      >
+        <Button style={styles.form} status='success'>Submit</Button>
+      </TouchableWithoutFeedback>
     </Layout>
     </TouchableWithoutFeedback>
     </ScrollView>

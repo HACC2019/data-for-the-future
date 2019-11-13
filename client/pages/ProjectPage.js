@@ -16,7 +16,7 @@ export class ProjectPage extends React.Component {
         style={{ width: '100%', height: 225 }}
         source={{ uri: 'http://www.hawaiimagazine.com/sites/default/files/field/image/HiM1708-AY-Biki-Bikes-6377.jpg' }}
       />
-      <Layout style={styles.outer} level="3">
+      <Layout style={styles.outer} level="2">
         <Layout style={styles.body}>
           <ScrollView >
             <Text category="h4">{this.props.project}</Text>
