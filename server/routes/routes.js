@@ -1,6 +1,99 @@
 const models = require('../models');
 const Boom = require('boom');
 module.exports = [
+  // Begin association RESTful API
+  {
+    path: '/user/project/{id}', // userId
+    method: 'GET',
+    handler: async function(request) {
+      try {
+        const result = await models.User.findAll({
+          where: {id: request.params.id},
+          include: [{model: models.Project, as: 'projects'}]
+        })
+        return result;
+      } catch (err) {console.log(err);return Boom.notFound();}
+    }
+  },
+  {
+    path: '/project/report/{id}',
+    method: 'GET',
+    handler: async function(request) {
+      try {
+        const result = await models.Project.findAll({
+          where: {id: request.params.id},
+          include: [{model: models.Report, as: 'report'}] 
+        })
+        return result;
+      } catch (err) {return Boom.notFound();}
+    }
+  },
+  {
+    path: '/project/categories/{id}',
+    method: 'GET',
+    handler: async function(request) {
+      try {
+        const result = await models.Project.findAll({
+          where: {id: request.params.id},
+          include: [{model: models.Category, as: 'listing'}] 
+        })
+        return result;
+      } catch (err) {return Boom.notFound();}
+    }
+  },
+  {
+    path: '/project/indicator/{id}',
+    method: 'GET',
+    handler: async function(request) {
+      try {
+        const result = await models.Project.findAll({
+          where: {id: request.params.id},
+          include: [{model: models.Indicator, as: 'measurement'}] 
+        })
+        return result;
+      } catch (err) {return Boom.notFound();}
+    }
+  },
+  {
+    path: '/project/user/{id}',
+    method: 'GET',
+    handler: async function(request) {
+      try {
+        const result = await models.Project.findAll({
+          where: {id: request.params.id},
+          include: [{model: models.User, as: 'contributor'}] 
+        })
+        return result;
+      } catch (err) {return Boom.notFound();}
+    }
+  },
+  {
+    path: '/categories/indicator/{id}',
+    method: 'GET',
+    handler: async function(request) {
+      try {
+        const result = await models.Category.findAll({
+          where: {id: request.params.id},
+          include: [{model: models.Indicator, as: 'indicator'}]
+        })
+        return result;
+      } catch (err) {return Boom.notFound();}
+    }
+  },
+  {
+    path: '/categories/project/{id}',
+    method: 'GET',
+    handler: async function(request) {
+      try {
+        const result = await models.Category.findAll({
+          where: {id: request.params.id},
+          include: [{model: models.Project, as: 'origin'}]
+        })
+        return result;
+      } catch (err) {return Boom.notFound();}
+    }
+  },
+  // End association RESTful API
   {
     path: '/user',
     method: 'GET',
