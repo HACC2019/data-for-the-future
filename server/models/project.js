@@ -5,6 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     summary: DataTypes.STRING,
     longitude: DataTypes.FLOAT,
     latitude: DataTypes.FLOAT,
+    image: DataTypes.STRING,
     endsAt: DataTypes.DATE
   }, {});
   project.associate = function(models) {
