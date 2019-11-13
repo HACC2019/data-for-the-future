@@ -4,7 +4,7 @@ import { StyleSheet, TouchableOpacity,
     ImageBackground, View } from 'react-native';
 import { Text, Icon } from 'react-native-ui-kitten';
 import { Actions } from 'react-native-router-flux';
-
+import CustomIcon from '../components/CustomIcon'
 
 
 
@@ -21,16 +21,16 @@ export class ProjectCard extends React.Component {
     report: "A high turn out this time. We reserved about twenty bikes but needed sixty! During the time, we toured what Waikiki had to offer with its scenic Layouts, impeccable food and deceiving tourist traps.",
     statistics: [
       {
-        category: 'CLEAN ENERGY',
+        category: 'Clean Energy',
         metric: 50,
         unit: 'tons',
         description: 'of CO2 offset'
       },
       {
-        category: 'LOCAL FOOD',
-        metric: 1000,
-        unit: 'USD',
-        description: 'into economy'
+        category: 'Communities',
+        metric: 42,
+        unit: 'hours',
+        description: 'total Cardio activity'
       }
     ]
   })
@@ -47,11 +47,11 @@ export class ProjectCard extends React.Component {
             </View>
 
             <View style={styles.chipContainer}>
-                <Icon name='clock-outline' width={25} height={25} fill='#FFFFFF'/>
+            <CustomIcon name='icon-time' size={25} color='#FFFFFF'/>
                 <Text style={styles.chipsText} category='label'>
                 {this.props.projectDate}  
                 </Text>
-                <Icon name='people-outline'width={25} height={25} fill='#FFFFFF'/>
+                <CustomIcon name='icon-person' size={25} color='#FFFFFF'/>
                 <Text style={styles.chipsText} category='label'>
                 {this.props.projectParticipants}
                 </Text>

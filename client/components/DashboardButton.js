@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { StyleSheet, TouchableOpacity, ImageBackground, View,  } from 'react-native';
 import { Text, Icon } from 'react-native-ui-kitten';
 import { Actions } from 'react-native-router-flux';
-
+import CustomIcon from '../components/CustomIcon'
 
 export class DashboardButton extends React.Component {
   
@@ -26,7 +26,7 @@ export class DashboardButton extends React.Component {
         source={{uri: `${this.props.categoryBg}`}}>
         <View style={{flex: 1, flexDirection: 'row'}}>
         <View style={{flex: 1, justifyContent: 'center'}}>
-          <Icon name={this.props.categoryIcon} width={50} height={50} fill='#FFFFFF' /></View>
+        <CustomIcon name={this.props.categoryIcon} size={50} color='#FFFFFF'/></View>
          <View style={{flex: 3, justifyContent: 'center'}}>
           <Text style={styles.levelLabel} category='h6'> 
               {this.props.categoryTitle}

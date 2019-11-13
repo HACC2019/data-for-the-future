@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { StyleSheet, TouchableOpacity,
     ImageBackground, View, Linking } from 'react-native';
 import { Text, Icon } from 'react-native-ui-kitten';
-
 import CustomIcon from '../components/CustomIcon'
+
 
 
 export class CategoryHeader extends React.Component {
@@ -19,7 +19,7 @@ export class CategoryHeader extends React.Component {
             <View style={{flex:1, flexDirection:'column', justifyContent: 'center', alignItems: 'center'}}>
             <View style={{flex:1, flexDirection:'row', padding: 5, justifyContent: 'center', alignItems: 'center'}}>
               <View style={{flex:1}}>
-                <Icon name={this.props.categoryIcon} width={40} height={40} fill='#FFFFFF' />
+              <CustomIcon name={this.props.categoryIcon} size={40} color='#FFFFFF'/>
               </View>
               <View style={{flex:5 }}>
                 <Text style={styles.levelLabel} category='h6'> 

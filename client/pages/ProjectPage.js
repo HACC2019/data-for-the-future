@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { StyleSheet, View, Image, ScrollView } from 'react-native';
 import { Layout, Icon, Text } from 'react-native-ui-kitten';
 import { IndicatorStats } from '../components/ProjectPage/IndicatorStats';
+import CustomIcon from '../components/CustomIcon'
 
 
 export class ProjectPage extends React.Component {
@@ -21,17 +22,17 @@ export class ProjectPage extends React.Component {
           <ScrollView >
             <Text category="h4">{this.props.project}</Text>
             <Layout style={[styles.flexRow, styles.padding]}>
-              <Icon name='charging-outline' width={26} height={26} fill='#FF6961' />
-              <Icon name='car-outline' width={26} height={26} fill='#FF6961' />
-              <Icon name='globe-2-outline' width={26} height={26} fill='#ccc' />
-              <Icon name='trash-outline' width={26} height={26} fill='#ccc' />
-              <Icon name='bulb-outline' width={26} height={26} fill='#ccc' />
-              <Icon name='people-outline' width={26} height={26} fill='#ccc' />
+              <CustomIcon name='icon-communities' size={26} color='#000000'/>
+              <CustomIcon name='icon-eduwork' size={26} color='#b3b3b3'/>
+              <CustomIcon name='icon-energy' size={26} color='#000000'/>
+              <CustomIcon name='icon-food' size={26} color='#b3b3b3'/>
+              <CustomIcon name='icon-nrm' size={26} color='#b3b3b3'/>
+              <CustomIcon name='icon-waste' size={26} color='#b3b3b3'/>
             </Layout>
             <Layout style={{ paddingBottom: 10 }}>
               <Layout style={styles.flexRow}>
                 <Layout>
-                  <Icon name='clock-outline' width={20} height={20} fill='#3366FF' />
+                <CustomIcon name='icon-time' size={20} color='#b3b3b3'/>
                 </Layout>
                 <Layout style={{ paddingTop: 4, paddingLeft: 2 }}>
                   <Text appearance="hint" category="c1">
@@ -41,7 +42,7 @@ export class ProjectPage extends React.Component {
               </Layout>
               <Layout style={styles.flexRow}>
                 <Layout>
-                  <Icon name='person-outline' width={20} height={20} fill='#3366FF' />
+                <CustomIcon name='icon-person' size={20} color='#b3b3b3'/>
                 </Layout>
                 <Layout style={{ paddingTop: 5, paddingLeft: 2 }}>
                   <Text appearance="hint" category="c1">
