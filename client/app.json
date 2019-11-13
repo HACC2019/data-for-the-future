@@ -24,7 +24,14 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "NSAppTransportSecurity" : {
+        "NSExceptionDomans": {
+          "localhost" : {
+            "NSTemporaryExceptionAllowsInsecureHTTPLoads": true,
+          }
+        }
+      }
     }
   }
 }
