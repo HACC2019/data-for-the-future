@@ -12,7 +12,7 @@ export class MyImpact extends React.Component {
     return (
       <ScrollView style={styles.container} bounces={false} bouncesZoom={false} 
         alwaysBounceVertical={false} alwaysBounceHorizontal={false} {...this.props}>
-          <Image resizeMode={'contain'}style={styles.image} source={{uri: 'https://i.ibb.co/2WmH40B/My-Impact.png'}}></Image>
+          <Image resizeMode={'contain'}style={styles.image} source={{uri: 'https://i.ibb.co/F8FpSks/My-Impact.png'}}></Image>
         </ScrollView>
     );
   }
