@@ -5,7 +5,7 @@ module.exports = {
       return queryInterface.bulkInsert('Projects', [
          {
             name: "Waikiki Biking",
-            summary: "Join us for a day of biking along the beach and reduce the amount of CO2 in the atmosphere by choosing an alternative mode of transportation. You also benefit from increased health and cardiovascular activity. There will be 40 bikes available! Meet us at the Statue!",
+            summary: "Join us for a day of biking along the beach and reduce the amount of CO2 in the atmosphere by choosing an alternative mode of transportation.",
             longitude: 42.0,
             latitude: 42.0,
             image: 'http://www.hawaiimagazine.com/sites/default/files/field/image/HiM1708-AY-Biki-Bikes-6377.jpg',
