@@ -6,7 +6,8 @@ module.exports = (sequelize, DataTypes) => {
     longitude: DataTypes.FLOAT,
     latitude: DataTypes.FLOAT,
     image: DataTypes.STRING,
-    endsAt: DataTypes.DATE
+    endsAt: DataTypes.DATE,
+    startsAt: DataTypes.DATE
   }, {});
   project.associate = function(models) {
     project.belongsToMany(models.User, {through: 'ProjectUsers', foreignKey: 'projectId', as: 'contributor'})
