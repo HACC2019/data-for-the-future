@@ -24,18 +24,35 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true,
       "infoPlist": {
         "NSAppTransportSecurity" : {
-          "NSExceptionDomans": {
+          "NSAllowsArbitraryLoads": true,
+          "NSExceptionDomains": {
             "localhost" : {
+              "NSIncludesSubdomains": true,
               "NSTemporaryExceptionAllowsInsecureHTTPLoads": true,
-              "NSIncludesSubdomains": true
+              "NSExceptionRequiresForwardSecrecy": false,
+              "NSRequiresCertificateTransparency": false,
+              "NSTemporaryExceptionMinimumTLSVersion": "TLSv1.1"
+            },
+            "server.local" : {
+              "NSIncludesSubdomains": true,
+              "NSTemporaryExceptionAllowsInsecureHTTPLoads": true,
+              "NSExceptionRequiresForwardSecrecy": false,
+              "NSRequiresCertificateTransparency": false,
+              "NSTemporaryExceptionMinimumTLSVersion": "TLSv1.1"
+            },
+            "localhost:3000" : {
+              "NSIncludesSubdomains": true,
+              "NSTemporaryExceptionAllowsInsecureHTTPLoads": true,
+              "NSExceptionRequiresForwardSecrecy": false,
+              "NSRequiresCertificateTransparency": false,
+              "NSTemporaryExceptionMinimumTLSVersion": "TLSv1.1"
             }
-          },
-          "NSAllowsArbitraryLoads": true
+          }
         }
-      }
+      },
+      "supportsTablet": true,
     }
   }
 }
