@@ -24,6 +24,10 @@
       "**/*"
     ],
     "ios": {
+      "bundleIdentifier": "com.company",
+        "config": {
+            "googleMapsApiKey": "AIzaSyC5ZQtJ6PxuKmx9LkKaC9B02SKE4GBvRKg"
+        },
       "supportsTablet": true,
       "infoPlist": {
         "NSAppTransportSecurity" : {
@@ -36,6 +40,14 @@
           "NSAllowsArbitraryLoads": true
         }
       }
-    }
+    },
+    "android": {
+      "package": "com.company",
+      "config": {
+          "googleMaps": {
+              "apiKey": "AIzaSyC5ZQtJ6PxuKmx9LkKaC9B02SKE4GBvRKg"
+          }
+      }
+  }
   }
 }

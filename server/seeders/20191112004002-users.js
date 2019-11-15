@@ -30,8 +30,8 @@ module.exports = {
         {
            username: "findersKeepers",
            email: "fake@royalty.com",
-           first: "Polter",
-           last: "Geist",
+           first: "Porter",
+           last: "Get",
            profilePic: "https://ichef.bbci.co.uk/news/660/media/images/77246000/jpg/_77246627_fa4891a6-ccf8-4c8f-9e32-f1a80cdcdf4c.jpg",
            phoneNumber: 0000000000
         },

@@ -37,7 +37,7 @@ export class ExploreCategories extends React.Component {
   goal: 'http://aloha-challenge.hawaiigreengrowth.org/aloha-goals/green-workforce-education/'}]
   
   componentDidMount() {
-    axios.get('http://localhost:3000/categories')
+    axios.get('https://138.197.0.93/categories')
       .then(({ data }) => {
         console.log(data)
         this.setState({ categories: data })

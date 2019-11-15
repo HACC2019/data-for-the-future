@@ -10,7 +10,10 @@ import DashboardTabIcon from './components/Tabs/DashboardTabIcon';
 import ProjectsTabIcon from './components/Tabs/ProjectsTabIcon';
 import ImpactTabIcon from './components/Tabs/ImpactTabIcon';
 
-import { TestScreen } from './pages/TestScreen';
+import { AddProjectLocationPicker } from './components/AddProject/AddProjectLocationPicker';
+
+
+
 
 import { ExploreCategories } from './pages/ExploreCategories';
 import { ExploreCategoryProjects } from './pages/ExploreCategoryProjects';
@@ -50,6 +53,7 @@ const App = () => (
               <Stack key="Add" title="Add a Project" tabBarLabel= "Add"
               inactiveBackgroundColor="#919191" activeBackgroundColor="#000000" icon={AddTabIcon} hideDrawerButton>
                 <Scene initial key="AddProject" title="Add a Project" component={AddProject}/>
+                <Scene lazy back key="AddProjectLocationPicker" title="Pick a Location" component={AddProjectLocationPicker}/>
               </Stack>
               
               <Stack key="Impact" title="My Impact"

@@ -5,7 +5,7 @@ import MapPicker from "react-native-map-picker";
 
 import { StyleSheet, Text, View, Dimensions } from 'react-native';
 
-  export class AddProjectLocationPicker extends React.Component {
+  export class Mapp extends React.Component {
     render() {
       return (
         <View style={{flex:1}}>
