@@ -7,8 +7,6 @@ import { Actions } from 'react-native-router-flux';
 
 
 
-
-
 export class ProjectCard extends React.Component {
   
 
