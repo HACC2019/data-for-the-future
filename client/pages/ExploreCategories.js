@@ -5,6 +5,7 @@ import {  StyleSheet, View  } from 'react-native';
 import { Button, Layout, Text, List } from 'react-native-ui-kitten';
 import { CategoryButton } from '../components/CategoryButton';
 import { Actions } from 'react-native-router-flux';
+import request from 'superagent';
 
 export class ExploreCategories extends React.Component {
   state = {
@@ -37,25 +38,30 @@ export class ExploreCategories extends React.Component {
   goal: 'http://aloha-challenge.hawaiigreengrowth.org/aloha-goals/green-workforce-education/'}]
   
   componentDidMount() {
-    axios.get('https://138.197.0.93/categories')
-      .then(({ data }) => {
-        console.log(data)
-        this.setState({ categories: data })
+    request.get('http://138.197.0.93/categories')
+      .then((res) => {
+        console.log(res.body)
+        this.setState({ categories: res.body })
       })
       .catch(err => console.log(err))
   }
-
-  renderCard = ({item}) => (
-    <CategoryButton categoryId={item.id} categoryTitle={`${item.name}`} categoryDescription={`${item.description}`}
-    categoryIcon={`${item.icon}`} categoryBg={`${item.image}`} categoryGoal={`${item.goal}`}/>
-  )
-
-  render() {
-    return (
-      <View style={styles.container}>
-        <List contentContainerStyle={styles.listStyle}
-        data={this.categories}
-        renderItem={this.renderCard}/>
+    
+    render() {
+      return (
+        <View style={styles.container}>
+        {
+          this.state.categories.map((item) => (
+            <CategoryButton
+              categoryId={item.id}
+              categoryTitle={`${item.name}`}
+              categoryDescription={`${item.description}`}
+              categoryIcon={`${item.icon}`}
+              categoryBg={item.image}
+              categoryGoal={item.goal}
+              key={item.id}
+            />
+          ))
+        }
       </View>
     );
   }
