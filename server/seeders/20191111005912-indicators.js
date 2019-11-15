@@ -3,15 +3,15 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('Indicators', [
-      {
+      { id: 1,
         categoryId: 1,
-        name: "Hawai'i Renewable Portfolio Standards by Utility/County",
+        name: "Hawaii Renewable Portfolio Standards by Utility/County",
         unit: 'RPS',
         description: 'by Utility/County',
         createdAt: new Date(),
         updatedAt: new Date()
       },
-      {
+      {id: 2,
         categoryId: 1,
         name: "Hawai‘i Renewable Energy Generation by Utility/County",
         unit: 'kW Hours',
@@ -19,15 +19,15 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
-      {
+      {id: 3,
         categoryId: 1,
-        name: "Hawai'i Renewable Energy Generation by Source",
+        name: "Hawaii Renewable Energy Generation by Source",
         unit: 'kW Hours',
         description: 'by Source',
         createdAt: new Date(),
         updatedAt: new Date()
       },
-      {
+      {id: 4,
         categoryId: 1,
         name: 'Energy Efficiency Portfolio Savings',
         unit: '',
@@ -35,7 +35,7 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
-      {
+      {id: 5,
         categoryId: 1,
         name: 'ENERGY STAR Buildings',
         unit: 'latitude/longitude',
@@ -51,7 +51,7 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
-      {
+      {id: 6,
         categoryId: 1,
         name: 'Average Energy use (household)',
         unit: 'kW Hours',
@@ -59,7 +59,7 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
-      {
+      {id: 7,
         categoryId: 1,
         name: 'Average Energy use by County',
         unit: 'kW Hours',
@@ -67,7 +67,7 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
-      {
+      {id: 8,
         categoryId: 1,
         name: 'Emissions inventory for Energy Sector',
         unit: 'tons',
@@ -75,7 +75,7 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
-      {
+      {id: 9,
         categoryId: 1,
         name: 'energy emissions by source',
         unit: 'tons',
@@ -83,7 +83,7 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
-      {
+      {id: 10,
         categoryId: 1,
         name: 'stationary combustion emissions by economic sector',
         unit: 'tons',
@@ -91,7 +91,7 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
-      {
+      {id: 11,
         categoryId: 1,
         name: 'transportation emissions by End-Use Sector',
         unit: 'tons',
@@ -99,7 +99,7 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
-      {
+      {id: 12,
         categoryId: 1,
         name: 'Power Plant emissions',
         unit: 'tons',
@@ -107,7 +107,7 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
-      {
+      {id: 13,
         categoryId: 1,
         name: 'Total petroleum use by sector',
         unit: 'Barrels (thousand)',
@@ -115,7 +115,7 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
-      {
+      {id: 14,
         categoryId: 1,
         name: 'Average Fuel Use Per Person/Annually',
         unit: '$',
@@ -123,7 +123,7 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
-      {
+      {id: 15,
         categoryId: 1,
         name: 'Transportation',
         unit: 'Gallons',
@@ -131,7 +131,7 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
-      {
+      {id: 16,
         categoryId: 2,
         name: 'Local Foods Production',
         unit: 'Pounds',
@@ -139,7 +139,47 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
-      {
+      {id: 17,
+        categoryId: 2,
+        name: 'Local Foods Production',
+        unit: 'Pounds',
+        description: 'of red meat produced locally',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {id: 18,
+        categoryId: 2,
+        name: 'Local Foods Production',
+        unit: 'Pounds',
+        description: 'of cabbage produced locally',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {id: 19,
+        categoryId: 2,
+        name: 'Local Foods Production',
+        unit: 'Pounds',
+        description: 'of lettuce produced locally',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {id: 20,
+        categoryId: 2,
+        name: 'Local Foods Production',
+        unit: 'Pounds',
+        description: 'of eggplant produced locally',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {id: 21,
+        categoryId: 2,
+        name: 'Local Foods Production',
+        unit: 'Pounds',
+        description: 'of bananas produced locally',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {id: 22,
         categoryId: 2,
         name: 'Labor & Land resources',
         unit: 'Acres',
@@ -147,15 +187,15 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
-      {
+      {id: 23,
         categoryId: 2,
         name: 'Processing',
         unit: '#',
-        description: "of agricultural processing facilities on Hawai'i",
+        description: "of agricultural processing facilities on Hawaii",
         createdAt: new Date(),
         updatedAt: new Date()
       },
-      {
+      {id: 24,
         categoryId: 2,
         name: 'Distribution',
         unit: '#',
@@ -163,31 +203,39 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
-      {
+      {id: 25,
         categoryId: 2,
         name: 'Consumption',
         unit: '$',
-        description: 'of crop/livestock/aquaculture sales in Hawai\'i',
+        description: 'of crop/livestock/aquaculture sales in Hawaii',
         createdAt: new Date(),
         updatedAt: new Date()
       },
-      {
+      {id: 26,
         categoryId: 3,
-        name: 'Percent water used per county by sector',
+        name: 'Increase Freshwater Capacity',
         unit: 'Million Gallons',
         description: 'of water used by county per year',
         createdAt: new Date(),
         updatedAt: new Date()
       },
-      {
+      {id: 27,
         categoryId: 3,
-        name: "Land Cover of Burned areas in Hawai'i",
+        name: "Watershed Forest Protection",
         unit: 'Acres',
-        description: "of land cover of burned areas in Hawai'i",
+        description: "of land cover of burned areas in Hawaii",
         createdAt: new Date(),
         updatedAt: new Date()
       },
-      {
+      {id: 28,
+        categoryId: 3,
+        name: "Marine Managed Areas",
+        unit: 'Acres',
+        description: "of land cover of burned areas in Hawaii",
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {id: 29,
         categoryId: 3,
         name: 'Invasive Species Control',
         unit: '%',
@@ -195,7 +243,7 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
-      {
+      {id: 30,
         categoryId: 3,
         name: 'Native Species Managed',
         unit: '%',
@@ -203,7 +251,7 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
-      {
+      {id: 31,
         categoryId: 4,
         name: 'Total solid waste reduction',
         unit: 'tons',
@@ -211,7 +259,7 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
-      {
+      {id: 32,
         categoryId: 4,
         name: 'Recycling (type)',
         unit: 'Tons',
@@ -219,7 +267,7 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
-      {
+      {id: 33,
         categoryId: 4,
         name: 'Estimated Tons of materials diverted',
         unit: 'Tons',
@@ -227,15 +275,15 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
-      {
+      {id: 34,
         categoryId: 5,
-        name: 'Total Annual vehicle miles travelled',
+        name: 'Mobility & Accessibility',
         unit: 'VMT (Vehicle Miles Travelled)',
         description: 'in Hawaii',
         createdAt: new Date(),
         updatedAt: new Date()
       },
-      {
+      {id: 35,
         categoryId: 5,
         name: 'Economic Prosperity',
         unit: '%',
@@ -243,7 +291,7 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
-      {
+      {id: 36,
         categoryId: 5,
         name: 'Overall Social Vulnerability Index by County',
         unit: 'SVI (Social Vulnerability Index)',
@@ -251,14 +299,54 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
-      {
+      {id: 37,
+        categoryId: 5,
+        name: 'Land Use Impacts',
+        unit: 'people',
+        description: 'per Acre of Urban Land',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {id: 38,
+        categoryId: 5,
+        name: 'Open Public Green Spaces',
+        unit: 'square feet',
+        description: 'of State Park',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {id: 39,
+        categoryId: 5,
+        name: 'Greenhouse Gas Mitigation',
+        unit: 'tons',
+        description: 'reduction in GHG emissions',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {id: 40,
       categoryId: 6,
-      name: 'Number of public schools participating in initiative',
-      unit: 'schools',
-      description: '',
+      name: 'Aina-Based Education & Community Engagement',
+      unit: 'Number',
+      description: ' of public schools participating in initiative',
       createdAt: new Date(),
       updatedAt: new Date()
-      }
+      },     
+      { id: 41,
+      categoryId: 6,
+      name: 'Transformational Learning & Education Attainment',
+      unit: 'children',
+      description: 'ready to succeed in school',
+      createdAt: new Date(),
+      updatedAt: new Date()
+      },
+      { id: 42,
+        categoryId: 5,
+        name: 'Increase Livability',
+        unit: 'hours',
+        description: 'of cardiovascular activity',
+        createdAt: new Date(),
+        updatedAt: new Date()
+        },
     ], {});
   },
 

@@ -6,7 +6,6 @@ import { Text, Icon } from 'react-native-ui-kitten';
 import { Actions } from 'react-native-router-flux';
 
 
-
 export class ProjectCard extends React.Component {
   
 

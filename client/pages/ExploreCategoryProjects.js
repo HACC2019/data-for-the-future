@@ -50,7 +50,7 @@ export class ExploreCategoryProjects extends React.Component {
       
         <ScrollView style={{flex:5}} bounces={false} bouncesZoom={false} 
         alwaysBounceVertical={false} alwaysBounceHorizontal={false} {...this.props}>
-            <List contentContainerStyle={styles.listStyle} data={this.list}
+            <List contentContainerStyle={styles.listStyle} data={this.listdata}
             renderItem={this.renderCard}/>
         </ScrollView>
       </View>
