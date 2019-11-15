@@ -27,7 +27,7 @@
       "supportsTablet": true,
       "infoPlist": {
         "NSAppTransportSecurity" : {
-          "NSExceptionDomans": {
+          "NSExceptionDomains": {
             "localhost" : {
               "NSTemporaryExceptionAllowsInsecureHTTPLoads": true,
               "NSIncludesSubdomains": true
