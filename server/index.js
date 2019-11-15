@@ -8,7 +8,7 @@ const fs = require('fs');
 const init = async () => {
   const server = Hapi.server({
     port: 3000,
-    host: 'localhost',
+    host: '168.105.134.129',
     routes: {
       cors: true
     },
