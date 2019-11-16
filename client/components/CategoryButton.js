@@ -5,7 +5,6 @@ import { StyleSheet, TouchableOpacity,
 import { Text, Icon } from 'react-native-ui-kitten';
 import { Actions } from 'react-native-router-flux';
 
-import CustomIcon from '../components/CustomIcon'
 
 export class CategoryButton extends React.Component {
   

@@ -128,14 +128,14 @@ state = {
                 const opacityStyle = {opacity: interpolations[index].opacity,};           
             
                 return (
-                    <View style={styles.card} key={marker.id}>
-                        <ProjectCard
-                        projectTitle={marker.name}
-                        projectDate={new Date(marker.endsAt).toDateString()}
-                        projectParticipants={marker.people.length}
-                        projectImage={marker.image}
-                        project={marker}>
-                        </ProjectCard>
+                    <View style={styles.card} key={index}>
+                        <ProjectCard 
+                        projectName={marker.name} categories={marker.categories} summary={marker.summary} 
+                        date={new Date(marker.endsAt).toDateString()}
+                        people={marker.people}
+                        image={marker.image}
+                        lat={marker.lat} long={marker.long} report=""
+                        stats={marker.stats} host={marker.hostid}/>
                     </View>
                 );
             } ) }

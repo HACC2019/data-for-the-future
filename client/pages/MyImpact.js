@@ -635,7 +635,7 @@ export class MyImpact extends React.Component {
       <ScrollView style={styles.container} bounces={false} bouncesZoom={false} 
         alwaysBounceVertical={false} alwaysBounceHorizontal={false} {...this.props}>
             <View style={{flex:1, justifyContent: 'center',alignItems:'center',alignContent:'center'}}>
-            <Text category='h3'> 
+            <Text style={{marginTop:10}} category='h3'> 
                  Engagement Statistics
             </Text>
             </View>
@@ -654,7 +654,7 @@ export class MyImpact extends React.Component {
 
             <View style={{padding:15, flex: 1, flexDirection: 'row'}}>
           <View style={{flex: 1, justifyContent: 'center'}}>
-            <Icon style={{marginLeft:10}} width={75} height={75} fill='#000000' name='heart-outline'/>
+            <Icon style={{marginLeft:10}} width={58} height={58} fill='#000000' name='heart-outline'/>
           </View>
           <View style={{flex: 3, flexDirection: 'column', justifyContent: 'center',alignItems:'center',alignContent:'center'}}>
             <Text style={styles.levelLabel} category='h3'> 
@@ -666,7 +666,7 @@ export class MyImpact extends React.Component {
           </View>
 
           <View style={{flex: 1, justifyContent: 'center'}}>
-            <Icon style={{marginLeft:10}} width={75} height={75} fill='#000000' name='star-outline'/>
+            <Icon style={{marginLeft:10}} width={58} height={58} fill='#000000' name='star-outline'/>
           </View>
           <View style={{flex: 3, flexDirection: 'column', justifyContent: 'center',alignItems:'center',alignContent:'center'}}>
             <Text style={styles.levelLabel} category='h3'> 

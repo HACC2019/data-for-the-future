@@ -46,7 +46,7 @@ projectList = [
       "name": "Restore the Forest",
       "lat": 21.313137,
       "long": -157.780748,
-      "image": "http://geographicconsulting.com/wp-content/uploads/2013/04/4-02Seast-640x475.jpg",
+      "image": "https://media.bizj.us/view/img/11109639/credit-nate-yuen-intro-native-forest-pano-00-2500*750xx1716-966-0-0.jpg",
       "summary": "Help restore the aina consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       "endsAt": "2019-11-01T10:00:00.000Z",
       "startsAt": "2019-10-31T10:00:00.000Z",
@@ -148,11 +148,11 @@ const App = () => (
   <React.Fragment>
     <IconRegistry icons={EvaIconsPack} />
     <ApplicationProvider mapping={mapping} theme={lightTheme}>
-      <Router>
-        <Stack key="root"  titleStyle={{ alignSelf: 'center' }}>
+      <Router >
+        <Stack key="root" titleStyle={{ alignSelf: 'center' }} >
           <Scene hideNavBar panHandlers={null}>
-            <Tabs key="tabbar" routeName="tabbar" backToInitial >
-              <Stack initial key="Explore" title="Explore"
+            <Tabs key="tabbar" activeTintColor="#000000" routeName="tabbar" backToInitial >
+              <Stack initial key="Explore" title="Explore" 
               inactiveBackgroundColor="#919191" activeBackgroundColor="#000000" icon={ExploreTabIcon}>
                 <Scene initial key="ExploreCategories" title="Explore Categories" component={ExploreCategories}/>
                 <Scene lazy back key="ExploreCategoryProjects" title="Explore Projects" component={ExploreCategoryProjects} hideDrawerButton/>

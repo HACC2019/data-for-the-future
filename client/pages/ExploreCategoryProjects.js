@@ -35,7 +35,7 @@ export class ExploreCategoryProjects extends React.Component {
         "name": "Restore the Forest",
         "lat": 21.313137,
         "long": -157.780748,
-        "image": "http://geographicconsulting.com/wp-content/uploads/2013/04/4-02Seast-640x475.jpg",
+        "image": "https://media.bizj.us/view/img/11109639/credit-nate-yuen-intro-native-forest-pano-00-2500*750xx1716-966-0-0.jpg",
         "summary": "Help restore the aina consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         "endsAt": "2019-11-01T10:00:00.000Z",
         "startsAt": "2019-10-31T10:00:00.000Z",
@@ -147,10 +147,7 @@ export class ExploreCategoryProjects extends React.Component {
   //     });
   // }
 
-  renderCard = ({item}) => (
-    <ProjectCard projectTitle={`${item.name}`} projectDate={new Date(item.endsAt).toDateString()}
-    projectParticipants={item.people.length} projectImage={`${item.image}`} project={item}/>
-  )
+
   
 
   render() {
@@ -166,8 +163,19 @@ export class ExploreCategoryProjects extends React.Component {
       
         <ScrollView style={{flex:5}} bounces={false} bouncesZoom={false} 
         alwaysBounceVertical={false} alwaysBounceHorizontal={false} {...this.props}>
-            <List contentContainerStyle={styles.listStyle} data={this.listdata}
-            renderItem={this.renderCard}/>
+          
+
+            <View style={styles.listStyle}>
+            {this.listdata.map( (marker, index) => (
+                <ProjectCard key={index}
+                  projectName={marker.name} categories={marker.categories} summary={marker.summary} 
+                  date={new Date(marker.endsAt).toDateString()}
+                  people={marker.people}
+                  image={marker.image}
+                  lat={marker.lat} long={marker.long} report=""
+                  stats={marker.stats} host={marker.hostid}/> ))
+            }
+            </View>
         </ScrollView>
         <FloatingAction
           actions={[{text: "Map", icon: require("../assets/icon-marker.png"), name:"map", position:1}]}
