@@ -85,7 +85,7 @@ export class ExploreCategoryProjects extends React.Component {
         "indicators": [],
         "id": 5,
         "hostid": 0,
-        "people": [10]
+        "people": []
     },
     {
         "name": "Kaimuki HS Lunch Sorting",
@@ -163,7 +163,7 @@ export class ExploreCategoryProjects extends React.Component {
         "long": -157.910385,
         "image": "https://photos-images.active.com/file/3/1/original/b5/73/b57386ea-2cea-4ce3-861e-755d454b113e.jpg",
         "summary": "Run for a cause, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-        "endsAt": "2019-11-01T10:00:00.000Z",
+        "endsAt": "2019-10-01T10:00:00.000Z",
         "startsAt": "2019-10-31T10:00:00.000Z",
         "categories": [4],
         "indicators": [42,40],
@@ -219,7 +219,7 @@ export class ExploreCategoryProjects extends React.Component {
         "long": -157.696037,
         "image": "https://scontent.cdninstagram.com/vp/4dbe0e5cd30649953fb02fe44bd6692c/5E30426F/t51.2885-15/sh0.08/e35/s640x640/65304698_143546063391123_4386199742362444400_n.jpg?_nc_ht=scontent.cdninstagram.com",
         "summary": "Save the turtles sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-        "endsAt": "2019-11-01T10:00:00.000Z",
+        "endsAt": "2019-10-01T10:00:00.000Z",
         "startsAt": "2019-10-31T10:00:00.000Z",
         "categories": [4,5],
         "indicators": [33,32,40,39],
@@ -248,7 +248,7 @@ export class ExploreCategoryProjects extends React.Component {
         "long": -158.012238,
         "image": "https://hiltonharvest.weebly.com/uploads/1/0/0/9/1009950/wftd-crew_orig.jpg",
         "summary": "Do you have a green thumb amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-        "endsAt": "2019-11-01T10:00:00.000Z",
+        "endsAt": "T10:00:00.000Z",
         "startsAt": "2019-10-31T10:00:00.000Z",
         "categories": [2,3,5],
         "indicators": [38,22,18,19,39],
@@ -267,7 +267,7 @@ export class ExploreCategoryProjects extends React.Component {
         "categories": [2,3,5],
         "indicators": [],
         "id": 20,
-        "hostid": 0,
+        "hostid": 10,
         "people": []
     },
     {
@@ -276,7 +276,7 @@ export class ExploreCategoryProjects extends React.Component {
         "long": -157.812653,
         "image": "https://d3583ivmhhw2le.cloudfront.net/images/uploads/campaigns/No_Beach_Access_Photo_1.jpg",
         "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-        "endsAt": "2019-11-01T10:00:00.000Z",
+        "endsAt": "2019-10-01T10:00:00.000Z",
         "startsAt": "2019-10-31T10:00:00.000Z",
         "categories": [3],
         "indicators": [],
@@ -324,7 +324,7 @@ export class ExploreCategoryProjects extends React.Component {
         "indicators": [],
         "id": 24,
         "hostid": 0,
-        "people": []
+        "people": [10]
     },
     {
         "name": "Maunalua Bay Restoration",
@@ -332,7 +332,7 @@ export class ExploreCategoryProjects extends React.Component {
         "long": -157.760696,
         "image": "http://www.malamamaunalua.org/wp-content/uploads/homeSlide-adopt-a-plot-photo.jpg",
         "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-        "endsAt": "2019-11-01T10:00:00.000Z",
+        "endsAt": "T10:00:00.000Z",
         "startsAt": "2019-10-31T10:00:00.000Z",
         "categories": [3],
         "indicators": [],
@@ -379,7 +379,7 @@ export class ExploreCategoryProjects extends React.Component {
         "categories": [1,4,5],
         "indicators": [],
         "id": 28,
-        "hostid": 10,
+        "hostid": 0,
         "people": []
     },
     {
@@ -444,7 +444,7 @@ export class ExploreCategoryProjects extends React.Component {
         "long": -157.706909,
         "image": "https://images.prod.meredith.com/product/0dcf116987a0e4b6e1e2d033d91b9861/1501565549916/l/a19-9-5-watt-led-lightbulb-dimmable",
         "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-        "endsAt": "2019-11-01T10:00:00.000Z",
+        "endsAt": "2019-10-01T10:00:00.000Z",
         "startsAt": "2019-10-31T10:00:00.000Z",
         "categories": [1],
         "indicators": [],
