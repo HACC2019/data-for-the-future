@@ -65,6 +65,7 @@ ProjectCard.propTypes = {
     projectDate: PropTypes.string.isRequired,
     projectParticipants: PropTypes.number.isRequired,
     projectImage: PropTypes.string,
+    project: PropTypes.object.isRequired,
   };
   
 ProjectCard.defaultProps = {
@@ -122,7 +123,7 @@ chipContainer: {
     borderRadius: 100,
   },
 overlay: {
-    backgroundColor: 'rgba(0, 0, 0, 0.45)',
+    backgroundColor: 'rgba(0, 0, 0, 0.40)',
     ...StyleSheet.absoluteFillObject,
     flexDirection: 'column',
     justifyContent: 'flex-end',

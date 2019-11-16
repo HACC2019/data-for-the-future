@@ -8,9 +8,9 @@ import { Actions } from 'react-native-router-flux';
 //import request from 'superagent';
 
 export class ExploreCategories extends React.Component {
-  state = {
-    categories: []
-  }
+  // state = {
+  //   categories: []
+  // }
 
   categories = [ {id: 1, name:'Clean Energy', icon: 'charging-outline',
   description:'70% clean energy – 40% from renewable sources and 30% from efficiency, with a view towards 100% renewable energy by 2045',
@@ -37,18 +37,19 @@ export class ExploreCategories extends React.Component {
   image:'https://i.ibb.co/Fzxfst4/eduBg.png', 
   goal: 'http://aloha-challenge.hawaiigreengrowth.org/aloha-goals/green-workforce-education/'}]
   
-  componentDidMount() {
-    request.get('http://138.197.0.93/categories')
-      .then((res) => {
-        console.log(res.body)
-        this.setState({ categories: res.body })
-      })
-      .catch(err => console.log(err))
-  }
+  // componentDidMount() {
+  //   request.get('http://138.197.0.93/categories')
+  //     .then((res) => {
+  //       console.log(res.body)
+  //       this.setState({ categories: res.body })
+  //     })
+  //     .catch(err => console.log(err))
+  // }
     
     render() {
       return (
         <View style={styles.container}>
+        <View style={styles.listStyle}>
         {
           this.categories.map((item) => (
             <CategoryButton
@@ -62,6 +63,7 @@ export class ExploreCategories extends React.Component {
             />
           ))
         }
+        </View>
       </View>
     );
   }

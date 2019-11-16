@@ -9,21 +9,20 @@ import CustomIcon from '../components/CustomIcon'
 
 export class CategoryButton extends React.Component {
   
-  gotoCategoryProjects = ({ category }) => Actions.ExploreCategoryProjects({
-    category
-  })
+  gotoCategoryProjects = ({ category }) => Actions.ExploreCategoryProjects({category
+  });
 
-  bg = this.props.categoryBg;;
+  
   render() {
     return (
     <TouchableOpacity activeOpacity={0.95} onPress={() => this.gotoCategoryProjects(
       {category: {
         id: this.props.categoryId,
-        title: `${this.props.categoryTitle}`,
-        description: `${this.props.categoryDescription}`,
-        icon: `${this.props.categoryIcon}`,
-        bg: `${this.props.categoryBg}`,
-        goal: `${this.props.categoryGoal}`,
+        title: this.props.categoryTitle,
+        description: this.props.categoryDescription,
+        icon: this.props.categoryIcon,
+        bg: this.props.categoryBg,
+        goal: this.props.categoryGoal,
       }})}>
         <ImageBackground style={styles.container}
         source={{uri: `${this.props.categoryBg}`}}>

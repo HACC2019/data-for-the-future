@@ -1,8 +1,8 @@
 [
     {
         "name": "Waikiki Biking",
-        "lat": 21.293138,
-        "long": -157.797854,
+        "lat": 21.272508,
+        "long": -157.823371,
         "image": "http://www.hawaiimagazine.com/sites/default/files/field/image/HiM1708-AY-Biki-Bikes-6377.jpg",
         "summary": "Join us for a day in the sun consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         "endsat": "2019-12-16T10:00:00.000Z",
@@ -444,7 +444,7 @@
         "startsat": "2019-10-31T10:00:00.000Z",
         "categories": [1,2,3,4,5,6],
         "indicators": [],
-        "id": 5,
+        "id": 34,
         "hostid": 10,
         "people": []
     },
@@ -458,7 +458,7 @@
         "startsat": "2019-10-31T10:00:00.000Z",
         "categories": [1,5],
         "indicators": [],
-        "id": 16,
+        "id": 35,
         "hostid": 0,
         "people": []
     },
@@ -472,7 +472,7 @@
         "startsat": "2019-10-31T10:00:00.000Z",
         "categories": [2,3,5],
         "indicators": [],
-        "id": 17,
+        "id": 36,
         "hostid": 0,
         "people": []
     },
@@ -486,7 +486,7 @@
         "startsat": "2019-10-31T10:00:00.000Z",
         "categories": [2,3,5],
         "indicators": [],
-        "id": 18,
+        "id": 37,
         "hostid": 0,
         "people": []
     }

@@ -11,7 +11,7 @@ import ProjectsTabIcon from './components/Tabs/ProjectsTabIcon';
 import ImpactTabIcon from './components/Tabs/ImpactTabIcon';
 
 import { AddProjectLocationPicker } from './components/AddProject/AddProjectLocationPicker';
-import ExploreProjectsMapView from './components/ExploreProjectsMapView';
+import { ExploreProjectsMapView } from './components/ExploreProjectsMapView';
 
 
 
@@ -37,9 +37,9 @@ const App = () => (
             <Tabs key="tabbar" routeName="tabbar" backToInitial >
               <Stack initial key="Explore" title="Explore"
               inactiveBackgroundColor="#919191" activeBackgroundColor="#000000" icon={ExploreTabIcon}>
-                <Scene lazy back key="ExploreCategories" title="Explore Categories" component={ExploreCategories}/>
+                <Scene initial key="ExploreCategories" title="Explore Categories" component={ExploreCategories}/>
+                <Scene lazy back key="ExploreCategoryProjects" title="Explore Projects" component={ExploreCategoryProjects} hideDrawerButton/>
                 <Scene lazy back key="ExploreProjectsMapView" title="Explore Projects" component={ExploreProjectsMapView} hideDrawerButton/>
-                <Scene initial key="ExploreCategoryProjects" title="Explore Projects" component={ExploreCategoryProjects} hideDrawerButton/>
                 <Scene lazy back key="ProjectPage" title="Project Details" component={ProjectPage} hideDrawerButton/>
               </Stack>
 
