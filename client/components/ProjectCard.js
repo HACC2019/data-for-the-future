@@ -61,11 +61,17 @@ export class ProjectCard extends React.Component {
 }
 
 ProjectCard.propTypes = {
-    projectTitle: PropTypes.string.isRequired,
-    projectDate: PropTypes.string.isRequired,
-    projectParticipants: PropTypes.number.isRequired,
-    projectImage: PropTypes.string,
-    project: PropTypes.object,
+    name: PropTypes.string.isRequired,
+    categories: PropTypes.arrayOf(PropTypes.number).isRequired,
+    date: PropTypes.string.isRequired,
+    participants: PropTypes.number,
+    summary: PropTypes.string.isRequired,
+    report: PropTypes.string,
+    stats: PropTypes.array,
+    lat: PropTypes.number,
+    long: PropTypes.number,
+    image: PropTypes.string,
+    people: PropTypes.array
   };
   
 ProjectCard.defaultProps = {

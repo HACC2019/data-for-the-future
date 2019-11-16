@@ -59,16 +59,6 @@ CategoryButton.propTypes = {
 
 
 
-  function elevationShadowStyle(elevation) {
-    return {
-      elevation,
-      shadowColor: 'black',
-      shadowOffset: { width: 0, height: 0.5 * elevation },
-      shadowOpacity: 0.3,
-      shadowRadius: 0.8 * elevation
-    };
-  }
-
 const styles = StyleSheet.create({
 container: {
     height: 90,
@@ -78,7 +68,12 @@ container: {
     alignContent: 'center',
     overflow: 'hidden',
     marginVertical: 8,
-    ...elevationShadowStyle(6)
+    elevation: 2,
+    shadowColor: "#000",
+    shadowRadius: 5,
+    shadowOpacity: 0.3,
+    shadowOffset: { x: 2, y: -2 },
+
   },
 levelLabel: {
     color: 'white',

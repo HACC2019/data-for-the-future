@@ -4,7 +4,8 @@ import {  StyleSheet, ScrollView, View, Dimensions  } from 'react-native';
 import { Button, Layout, Text, List, Icon } from 'react-native-ui-kitten';
 import { CategoryButton } from '../components/CategoryButton';
 import { Actions } from 'react-native-router-flux';
-import { BarChart, PieChart} from "react-native-chart-kit";
+import { LineChart, BarChart, PieChart} from "react-native-chart-kit";
+import { Line } from 'react-native-svg';
 
 export class MyImpact extends React.Component {
 
@@ -35,7 +36,7 @@ export class MyImpact extends React.Component {
         "categories": [3,5],
         "indicators": [27,29,30],
         "id": 2,
-        "hostid": 0,
+        "hostid": 10,
         "people": []
     },
     {
@@ -49,7 +50,7 @@ export class MyImpact extends React.Component {
         "categories": [2,5],
         "indicators": [24,21,19,18,17,22,38],
         "id": 3,
-        "hostid": 10,
+        "hostid": 0,
         "people": []
     },
     {
@@ -119,7 +120,7 @@ export class MyImpact extends React.Component {
         "categories": [4],
         "indicators": [],
         "id": 8,
-        "hostid": 10,
+        "hostid": 0,
         "people": []
     },
     {
@@ -442,7 +443,7 @@ export class MyImpact extends React.Component {
         "categories": [1],
         "indicators": [],
         "id": 33,
-        "hostid": 10,
+        "hostid": 0,
         "people": []
     },
     {
@@ -633,7 +634,11 @@ export class MyImpact extends React.Component {
     return (
       <ScrollView style={styles.container} bounces={false} bouncesZoom={false} 
         alwaysBounceVertical={false} alwaysBounceHorizontal={false} {...this.props}>
-      
+            <View style={{flex:1, justifyContent: 'center',alignItems:'center',alignContent:'center'}}>
+            <Text category='h3'> 
+                 Engagement Statistics
+            </Text>
+            </View>
         
         <View style={{ margin:10, }}>
           <PieChart
@@ -649,7 +654,7 @@ export class MyImpact extends React.Component {
 
             <View style={{padding:15, flex: 1, flexDirection: 'row'}}>
           <View style={{flex: 1, justifyContent: 'center'}}>
-            <Icon style={{marginLeft:10}} width={50} height={50} fill='#000000' name='heart-outline'/>
+            <Icon style={{marginLeft:10}} width={75} height={75} fill='#000000' name='heart-outline'/>
           </View>
           <View style={{flex: 3, flexDirection: 'column', justifyContent: 'center',alignItems:'center',alignContent:'center'}}>
             <Text style={styles.levelLabel} category='h3'> 
@@ -661,7 +666,7 @@ export class MyImpact extends React.Component {
           </View>
 
           <View style={{flex: 1, justifyContent: 'center'}}>
-            <Icon style={{marginLeft:10}} width={50} height={50} fill='#000000' name='star-outline'/>
+            <Icon style={{marginLeft:10}} width={75} height={75} fill='#000000' name='star-outline'/>
           </View>
           <View style={{flex: 3, flexDirection: 'column', justifyContent: 'center',alignItems:'center',alignContent:'center'}}>
             <Text style={styles.levelLabel} category='h3'> 
@@ -676,14 +681,23 @@ export class MyImpact extends React.Component {
 
 
 
-          <View style={{ marginLeft:-20, }}>
-            <BarChart data={this.barData}
+          <View style={{ marginLeft:-15, justifyContent: 'center',alignItems:'center',alignContent:'center'}}>
+            {/* <BarChart data={this.barData}
               width={win.width} height={220}
               chartConfig={this.chartsConfig}
               withVericalLabels={false}
               withHorizontalLabels={true}
               backgroundColor="transparent"
               fromZero={true}
+              /> */}
+
+              <LineChart
+              data={this.barData}
+              width={win.width+25} height={220}
+              chartConfig={this.chartsConfig}
+              withInnerLines={false}
+              fromZero 
+              bezier
               />
             </View>
 
