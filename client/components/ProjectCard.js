@@ -65,7 +65,7 @@ ProjectCard.propTypes = {
     projectDate: PropTypes.string.isRequired,
     projectParticipants: PropTypes.number.isRequired,
     projectImage: PropTypes.string,
-    project: PropTypes.object.isRequired,
+    project: PropTypes.object,
   };
   
 ProjectCard.defaultProps = {

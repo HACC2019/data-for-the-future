@@ -7,7 +7,7 @@ import { Actions } from 'react-native-router-flux';
 
 export class DashboardButton extends React.Component {
   
-  gotoDashboardCategory = ({ category }) => Actions.DashboardCategory({
+  gotoDashboardCategory = ({ category }) => Actions.DashboardCat({
     category
   })
 
