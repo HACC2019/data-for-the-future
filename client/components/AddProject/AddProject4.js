@@ -11,7 +11,7 @@ export class AddProject4 extends React.Component {
     },
   };
 
-  onSelect = (range) => {
+  onSelectDays = (range) => {
     this.setState({ range });
   };
 
@@ -19,7 +19,6 @@ export class AddProject4 extends React.Component {
     return (
       <Layout>
       <Text category='h5'>Project Timeframe</Text>
-      <Text>Choose a start date & end date. If the project is ongoing or recurring, only choose a single start date.</Text>
         <RangeDatepicker
           range={this.state.range}
           onSelect={this.onSelect}

@@ -5,20 +5,25 @@ import { Text, Layout, Select } from 'react-native-ui-kitten';
 // Select Categories
 export class AddProject1 extends React.Component {
 
-  data = [
-    { text: 'Clean Energy' },
-    { text: 'Local Food' },
-    { text: 'Natural Resource Management' },
-    { text: 'Waste Reduction' },
-    { text: 'Smart Sustainable Communities' },
-    { text: 'Green Education & Workforce' },
-  ];
+  categories = [ {id: 1, text:'Clean Energy',
+  description:'70% clean energy – 40% from renewable sources and 30% from efficiency, with a view towards 100% renewable energy by 2045',},
+  {id: 2, text:'Local Food', 
+  description:'At least double local food production: 0-30% of food consumed is grown locally',},
+  {id: 3, text:'Natural Resource Management',
+  description:'Reverse the trend of natural resource loss by increasing freshwater security, marine management, invasive species control and restoration',},
+  {id: 4, text:'Waste Reduction',
+  description:'Reduce solid waste stream prior to disposal by 70% through source reduction, recycling, bioconversion, and landfill diversion methods',},
+  {id: 5, text:'Smart Sustainable Communities',
+  description:'Increase livability and resilience through planning and implementation at the state and county levels',},
+  {id: 6, text:'Green Workforce & Education',
+  description:'Increase local green jobs and education to implement these targets',}];
+
 
   state = {
     categories: [],
   };
 
-  onSelect = (categories) => {
+  onSelectCat = (categories) => {
     this.setState({ categories });
   };
 
@@ -27,12 +32,11 @@ export class AddProject1 extends React.Component {
       <Layout>
         <Text category='h5'>Choose Categories</Text>
         <Select
-          data={this.data}
+          data={this.categories}
           multiSelect={true}
           selectedOption={this.state.categories}
-          onSelect={this.onSelect}
-          placeholder='Aloha+ Categories'
-        />
+          onSelect={this.onSelectCat}
+          placeholder='Aloha+ Categories'/>
         </Layout>
     );
   }

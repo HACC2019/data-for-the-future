@@ -7,8 +7,6 @@ export class AddProject3 extends React.Component {
   state = {
     title: '',
     description: '',
-    email: '',
-    phone: '',
     location:''
   };
 
@@ -18,12 +16,6 @@ export class AddProject3 extends React.Component {
 
   onDescriptionChange = (description) => {
     this.setState({ description });
-  };
-  onEmailChange = (email) => {
-    this.setState({ email });
-  };
-  onPhoneChange = (phone) => {
-    this.setState({ phone });
   };
 
   onLocationChange = (location) => {
@@ -46,16 +38,6 @@ export class AddProject3 extends React.Component {
           style={styles.description}
           TextInputProps={{multiline: true}}
 
-        />
-        <Input
-          placeholder='Contact Email'
-          value={this.state.email}
-          onChangeText={this.onEmailChange}
-        />
-        <Input
-          placeholder='Contact Phone'
-          value={this.state.phone}
-          onChangeText={this.onPhoneChange}
         />
         <Input
           placeholder='Location'
