@@ -5,45 +5,31 @@ module.exports = {
       return queryInterface.bulkInsert('ProjectUsers', [
          {
             userId: 1,
-            projectId: 1,
-            createdAt: new Date(2019,11,12),
-            updatedAt: new Date()
+            projectId: 1
          },
          {
             userId: 1,
-            projectId: 2,
-            createdAt: new Date(2019,11,12),
-            updatedAt: new Date()
+            projectId: 2
          },
          {
             userId: 2,
-            projectId: 1,
-            createdAt: new Date(2019,11,12),
-            updatedAt: new Date()
+            projectId: 1
          },
          {
             userId: 3,
-            projectId: 3,
-            createdAt: new Date(2019,11,12),
-            updatedAt: new Date()
+            projectId: 3
          },
          {
             userId: 3,
-            projectId: 4,
-            createdAt: new Date(2019,11,12),
-            updatedAt: new Date()
+            projectId: 4
          },
          {
             userId: 4,
-            projectId: 1,
-            createdAt: new Date(2019,11,12),
-            updatedAt: new Date()
+            projectId: 1
          },
          {
             userId: 4,
-            projectId: 5,
-            createdAt: new Date(2019,11,12),
-            updatedAt: new Date()
+            projectId: 5
          },
       ], {});
   },
