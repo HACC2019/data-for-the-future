@@ -24,7 +24,7 @@ export class ExploreCategoryProjects extends React.Component {
   }
   
   componentDidMount() {
-    axios.get(`http://168.105.134.129:3000/project/categories/${this.props.category.id}`)
+    axios.get(`http://localhost:3000/project/categories/${this.props.category.id}`)
       .then(({ data }) => {
         this.setState({
           list: data
@@ -45,12 +45,12 @@ export class ExploreCategoryProjects extends React.Component {
         categoryDescription={this.props.category.description}
         categoryIcon={this.props.category.icon}
         categoryBg={this.props.category.bg} 
-        categoryGoal={this.props.category.goal}>
+        ategoryGoal={this.props.category.goal}>
       </CategoryHeader>
       
         <ScrollView style={{flex:5}} bounces={false} bouncesZoom={false} 
         alwaysBounceVertical={false} alwaysBounceHorizontal={false} {...this.props}>
-            <List contentContainerStyle={styles.listStyle} data={this.list}
+            <List contentContainerStyle={styles.listStyle} data={this.listdata}
             renderItem={this.renderCard}/>
         </ScrollView>
       </View>
