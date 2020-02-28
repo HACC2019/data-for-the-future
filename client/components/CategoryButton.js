@@ -5,25 +5,23 @@ import { StyleSheet, TouchableOpacity,
 import { Text, Icon } from 'react-native-ui-kitten';
 import { Actions } from 'react-native-router-flux';
 
-import CustomIcon from '../components/CustomIcon'
 
 export class CategoryButton extends React.Component {
   
-  gotoCategoryProjects = ({ category }) => Actions.ExploreCategoryProjects({
-    category
-  })
+  gotoCategoryProjects = ({ category }) => Actions.ExploreCategoryProjects({category
+  });
 
-  bg = this.props.categoryBg;;
+  
   render() {
     return (
     <TouchableOpacity activeOpacity={0.95} onPress={() => this.gotoCategoryProjects(
       {category: {
         id: this.props.categoryId,
-        title: `${this.props.categoryTitle}`,
-        description: `${this.props.categoryDescription}`,
-        icon: `${this.props.categoryIcon}`,
-        bg: `${this.props.categoryBg}`,
-        goal: `${this.props.categoryGoal}`,
+        title: this.props.categoryTitle,
+        description: this.props.categoryDescription,
+        icon: this.props.categoryIcon,
+        bg: this.props.categoryBg,
+        goal: this.props.categoryGoal,
       }})}>
         <ImageBackground style={styles.container}
         source={{uri: `${this.props.categoryBg}`}}>
@@ -60,16 +58,6 @@ CategoryButton.propTypes = {
 
 
 
-  function elevationShadowStyle(elevation) {
-    return {
-      elevation,
-      shadowColor: 'black',
-      shadowOffset: { width: 0, height: 0.5 * elevation },
-      shadowOpacity: 0.3,
-      shadowRadius: 0.8 * elevation
-    };
-  }
-
 const styles = StyleSheet.create({
 container: {
     height: 90,
@@ -79,7 +67,12 @@ container: {
     alignContent: 'center',
     overflow: 'hidden',
     marginVertical: 8,
-    ...elevationShadowStyle(6)
+    elevation: 2,
+    shadowColor: "#000",
+    shadowRadius: 5,
+    shadowOpacity: 0.3,
+    shadowOffset: { x: 2, y: -2 },
+
   },
 levelLabel: {
     color: 'white',

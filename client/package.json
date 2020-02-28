@@ -15,6 +15,8 @@
     "react": "16.8.3",
     "react-dom": "16.8.3",
     "react-native": "https://github.com/expo/react-native/archive/sdk-35.0.0.tar.gz",
+    "react-native-chart-kit": "^3.11.0",
+    "react-native-floating-action": "^1.19.1",
     "react-native-gesture-handler": "^1.5.0",
     "react-native-location-view": "^0.2.1",
     "react-native-map-picker": "0.0.2",
@@ -23,7 +25,8 @@
     "react-native-svg": "^9.13.3",
     "react-native-ui-kitten": "^4.2.0",
     "react-native-vector-icons": "^6.6.0",
-    "react-native-web": "^0.11.7"
+    "react-native-web": "^0.11.7",
+    "superagent": "^5.1.0"
   },
   "devDependencies": {
     "babel-preset-expo": "^7.1.0"

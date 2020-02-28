@@ -5,7 +5,7 @@ import { Layout, Text, Button } from 'react-native-ui-kitten';
 
 
 
-export const AddProject = () => (
+export const AddProject6 = () => (
   <Layout style={styles.container}>
 
     <Button>BUTTON</Button>

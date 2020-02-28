@@ -7,7 +7,7 @@ import { Actions } from 'react-native-router-flux';
 
 export class DashboardButton extends React.Component {
   
-  gotoDashboardCategory = ({ category }) => Actions.DashboardCategory({
+  gotoDashboardCategory = ({ category }) => Actions.DashboardCat({
     category
   })
 
@@ -25,14 +25,12 @@ export class DashboardButton extends React.Component {
         <ImageBackground style={styles.container}
         source={{uri: `${this.props.categoryBg}`}}>
         <View style={{flex: 1, flexDirection: 'row'}}>
-        <View style={{flex: 1, justifyContent: 'center'}}>
-          <Icon name={this.props.categoryIcon} width={50} height={50} fill='#FFFFFF' /></View>
-         <View style={{flex: 3, justifyContent: 'center'}}>
+          <Icon name={this.props.categoryIcon} width={100} height={100} fill='#FFFFFF' /></View>
+         {/* <View style={{flex: 3, justifyContent: 'center'}}>
           <Text style={styles.levelLabel} category='h6'> 
               {this.props.categoryTitle}
           </Text>
-          </View>
-        </View>
+          </View> */}
         </ImageBackground>
     </TouchableOpacity>
     );
@@ -56,26 +54,24 @@ DashboardButton.propTypes = {
 
 
 
-  function elevationShadowStyle(elevation) {
-    return {
-      elevation,
-      shadowColor: 'black',
-      shadowOffset: { width: 0, height: 0.5 * elevation },
-      shadowOpacity: 0.3,
-      shadowRadius: 0.8 * elevation
-    };
-  }
 
 const styles = StyleSheet.create({
 container: {
-    height: 90,
-    padding: 16,
+    height: 120,
+    padding: 10,
+    margin: 10,
     borderRadius: 12,
     justifyContent: 'center',
     alignContent: 'center',
+    alignItems:'center',
     overflow: 'hidden',
     marginVertical: 8,
-    ...elevationShadowStyle(6)
+    elevation: 2,
+    shadowColor: "#000",
+    shadowRadius: 5,
+    shadowOpacity: 0.3,
+    shadowOffset: { x: 2, y: -2 },
+
   },
 levelLabel: {
     color: 'white',

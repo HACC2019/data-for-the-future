@@ -1,15 +1,4 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { ScrollView, ScrollViewProps, StyleSheet, View  } from 'react-native';
-import { Button, Layout, Text, List } from 'react-native-ui-kitten';
-import { ProjectCard } from '../components/ProjectCard';
-import { CategoryHeader } from '../components/CategoryHeader';
-import { Actions } from 'react-native-router-flux';
-
-export class MyProjects extends React.Component {
-
-
- projectList =[
+[
     {
         "name": "Waikiki Biking",
         "lat": 21.272508,
@@ -502,43 +491,3 @@ export class MyProjects extends React.Component {
         "people": []
     }
 ]
-
-
-myprojs = this.projectList.filter((item) => (
-  item.hostid == 10 || item.people.includes(10)
-));
-
-  render() {
-    return (
-      <View style={styles.container}>
-      {/* <CategoryHeader categoryTitle={this.props.category.title}
-      categoryDescription={this.props.category.description}
-      categoryIcon={this.props.category.icon}
-      categoryBg={this.props.category.bg} 
-      ategoryGoal={this.props.category.goal}></CategoryHeader>
-       */}
-        <ScrollView bounces={false} bouncesZoom={false} 
-        alwaysBounceVertical={false} alwaysBounceHorizontal={false} {...this.props}>
-            <View style={styles.listStyle}>
-            {this.myprojs.map( (marker, index) => (
-                <ProjectCard key={index}
-                  projectName={marker.name} categories={marker.categories} summary={marker.summary} 
-                  date={new Date(marker.endsAt).toDateString()}
-                  people={marker.people}
-                  image={marker.image}
-                  lat={marker.lat} long={marker.long} report=""
-                  stats={marker.stats} host={marker.hostid}/> ))
-            }
-            </View>
-        </ScrollView>
-      </View>
-    );
-  }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  listStyle: { paddingHorizontal: 16, paddingVertical: 8},
-});

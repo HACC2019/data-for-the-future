@@ -6,52 +6,42 @@ import { Text, Icon } from 'react-native-ui-kitten';
 import { Actions } from 'react-native-router-flux';
 
 
-
 export class ProjectCard extends React.Component {
   
 
   seeProject = () => Actions.ProjectPage({
-    project: "Waikiki Biking",
-    categories: [1,2,3],
-    date: "Thu, Nov. 28 11:00 - 16:00",
-    participants: 24,
-    summary: "Join us for a day of biking along the beach and reduce the amount of CO2 in the atmosphere by choosing an alternative mode of transportation. You also benefit from increased health and cardiovascular activity. There will be 40 bikes available! Meet us at the Statue!",
-    report: "A high turn out this time. We reserved about twenty bikes but needed sixty! During the time, we toured what Waikiki had to offer with its scenic Layouts, impeccable food and deceiving tourist traps.",
-    statistics: [
-      {
-        category: 'CLEAN ENERGY',
-        metric: 50,
-        unit: 'tons',
-        description: 'of CO2 offset'
-      },
-      {
-        category: 'LOCAL FOOD',
-        metric: 1000,
-        unit: 'USD',
-        description: 'into economy'
-      }
-    ]
+    projectName: this.props.projectName,
+    categories: this.props.categories,
+    date: this.props.date,
+    people: this.props.people,
+    summary: this.props.summary,
+    report: this.props.report,
+    stats: this.props.stats,
+    lat: this.props.lat,
+    long: this.props.long,
+    image: this.props.image,
+    host: this.props.host
   })
 
   render() {
     return (
     <TouchableOpacity activeOpacity={0.95} onPress={this.seeProject}>
-        <ImageBackground style={styles.container} source={{uri: `${this.props.projectImage}`}}>
+        <ImageBackground style={styles.container} source={{uri: `${this.props.image}`}}>
         <View style={styles.overlay}>
             <View  style={styles.chipContainer}>
                 <Text style={styles.levelLabel} category='h5'> 
-                    {this.props.projectTitle}
+                    {this.props.projectName}
                 </Text>
             </View>
 
             <View style={styles.chipContainer}>
                 <Icon name='clock-outline' width={25} height={25} fill='#FFFFFF'/>
                 <Text style={styles.chipsText} category='label'>
-                {this.props.projectDate}  
+                {this.props.date}  
                 </Text>
                 <Icon name='people-outline'width={25} height={25} fill='#FFFFFF'/>
                 <Text style={styles.chipsText} category='label'>
-                {this.props.projectParticipants}
+                {this.props.people}
                 </Text>
             </View>
         </View>
@@ -62,17 +52,26 @@ export class ProjectCard extends React.Component {
 }
 
 ProjectCard.propTypes = {
-    projectTitle: PropTypes.string.isRequired,
-    projectDate: PropTypes.string.isRequired,
-    projectParticipants: PropTypes.number.isRequired,
-    projectImage: PropTypes.string,
+  projectName: PropTypes.string.isRequired,
+    categories: PropTypes.arrayOf(PropTypes.number).isRequired,
+    date: PropTypes.string.isRequired,
+    people: PropTypes.array,
+    summary: PropTypes.string.isRequired,
+    report: PropTypes.string,
+    stats: PropTypes.array,
+    lat: PropTypes.number,
+    long: PropTypes.number,
+    image: PropTypes.string,
+    host: PropTypes.number,
+    id: PropTypes.number,
   };
   
 ProjectCard.defaultProps = {
-    participants: 0,
-    projectDate: 'Nov 11',
-    projectTitle: 'Project Title',
-    projectImage: 'http://www.hawaiimagazine.com/sites/default/files/field/image/HiM1708-AY-Biki-Bikes-6377.jpg'
+    people: 0,
+    date: 'Nov 11',
+    projectName: 'Waikiki Biking',
+    report: '',
+    image: 'http://www.hawaiimagazine.com/sites/default/files/field/image/HiM1708-AY-Biki-Bikes-6377.jpg'
 };
 
 
@@ -123,7 +122,7 @@ chipContainer: {
     borderRadius: 100,
   },
 overlay: {
-    backgroundColor: 'rgba(0, 0, 0, 0.45)',
+    backgroundColor: 'rgba(0, 0, 0, 0.40)',
     ...StyleSheet.absoluteFillObject,
     flexDirection: 'column',
     justifyContent: 'flex-end',
